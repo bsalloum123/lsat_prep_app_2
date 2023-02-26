@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "181486033470",
+    "firebase_url": "https://bscjiaks-default-rtdb.firebaseio.com",
+    "project_id": "bscjiaks",
+    "storage_bucket": "bscjiaks.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181486033470:android:fe8372add198cde81f8f6f",
+        "android_client_info": {
+          "package_name": "com.example.lsat_prep_app_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "181486033470-46r2av7bgpa9qsq3tb19dp1u41rhbdft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOPE5ltfuISVsmYaPliEsFmZSH6SEFpR8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "181486033470-46r2av7bgpa9qsq3tb19dp1u41rhbdft.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "181486033470-c1v634rocapmfops1hk36mi9b2303c8o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.lsatPrepApp2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
