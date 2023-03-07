@@ -30,12 +30,23 @@ class _homeState extends State<homePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
+        actions: <Widget>[
+          IconButton(
+          icon: const Icon(Icons.help_outline),
+            tooltip: 'Show help',
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('This is a help bar')));
+            },
+          ),
+        ],
       ),
       body: homeBody(),
       bottomNavigationBar: NavigationBar(
         destinations: const [
           NavigationDestination(icon: Icon(Icons.home), label: 'home'),
           NavigationDestination(icon: Icon(Icons.person), label: 'profile'),
+          NavigationDestination(icon: Icon(Icons.settings), label: 'settings'),
         ],
         onDestinationSelected: (int index){
           setState(() {
@@ -59,7 +70,7 @@ class homeBody extends StatelessWidget {
           children: [
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.purple[400],
+                  backgroundColor: Colors.green[200],
                   textStyle: const TextStyle(
                     fontSize: 22,
                     fontStyle: FontStyle.normal)),
@@ -67,7 +78,7 @@ class homeBody extends StatelessWidget {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.purple[300],
+                  backgroundColor: Colors.blue[200],
                   textStyle: const TextStyle(
                   fontSize: 22,
                   fontStyle: FontStyle.normal)),
@@ -75,7 +86,7 @@ class homeBody extends StatelessWidget {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.purple[200],
+                  backgroundColor: Colors.red[200],
                   textStyle: const TextStyle(
                   fontSize: 22,
                   fontStyle: FontStyle.normal)),

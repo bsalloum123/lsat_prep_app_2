@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/currentUser.dart';
 import 'package:lsat_prep_app_2/authenticate.dart';
+import 'package:lsat_prep_app_2/homePage.dart';
 import 'package:lsat_prep_app_2/signUp.dart';
 import 'package:lsat_prep_app_2/TempPage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -135,7 +136,7 @@ class _signInState extends State<signIn> {
 
         Navigator.push(
             context, MaterialPageRoute(builder: (context) {
-          return const temp(); //Temporary black page
+          return const homeDesign(); //Temporary black page
         }));
       }
       // User is signed in
