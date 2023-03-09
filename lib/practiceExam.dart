@@ -43,7 +43,7 @@ class _pTestState extends State<pTestPage> {
           ),
         ],
       ),
-      body: pTestBody(),
+      body: const pTestBody(),
       bottomNavigationBar: NavigationBar(
         destinations: const [
           NavigationDestination(icon: Icon(Icons.home), label: 'home'),
