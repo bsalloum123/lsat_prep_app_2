@@ -1,6 +1,7 @@
 import 'package:getwidget/getwidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lsat_prep_app_2/practiceExam.dart';
 
 class homeDesign extends StatelessWidget {
   const homeDesign({Key? key}) : super(key: key);
@@ -41,7 +42,7 @@ class _homeState extends State<homePage> {
           ),
         ],
       ),
-      body: homeBody(),
+      body: const homeBody(),
       bottomNavigationBar: NavigationBar(
         destinations: const [
           NavigationDestination(icon: Icon(Icons.home), label: 'home'),
@@ -74,7 +75,10 @@ class homeBody extends StatelessWidget {
                   textStyle: const TextStyle(
                     fontSize: 22,
                     fontStyle: FontStyle.normal)),
-              onPressed: (){}, child: const Text('Practice Exam'),
+              onPressed: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
+                  return const pTestDesign();}),);
+              }, child: const Text('Practice Exam'),
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
