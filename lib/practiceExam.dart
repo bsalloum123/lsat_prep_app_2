@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/homePage.dart';
+import 'package:lsat_prep_app_2/settings.dart';
 
 class pTestDesign extends StatelessWidget {
   const pTestDesign({Key? key}) : super(key: key);
@@ -54,6 +55,12 @@ class _pTestState extends State<pTestPage> {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) {
               return const homeDesign(); //Temporary black page
+            }));
+          }
+          if (index == 2){
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) {
+              return const settings(); //Temporary black page
             }));
           }
           //setState(() {

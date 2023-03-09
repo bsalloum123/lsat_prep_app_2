@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/practiceExam.dart';
+import 'package:lsat_prep_app_2/settings.dart';
 
 class homeDesign extends StatelessWidget {
   const homeDesign({Key? key}) : super(key: key);
@@ -50,9 +51,21 @@ class _homeState extends State<homePage> {
           NavigationDestination(icon: Icon(Icons.settings), label: 'settings'),
         ],
         onDestinationSelected: (int index){
-          setState(() {
-            currentPage = index;
-          });
+          if (index == 0){
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) {
+              return const homeDesign(); //Temporary black page
+            }));
+          }
+          if (index == 2){
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) {
+              return const settings(); //Temporary black page
+            }));
+          }
+          // setState(() {
+          //   currentPage = index;
+          // });
         },
         selectedIndex: currentPage,
       ),
