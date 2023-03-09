@@ -9,19 +9,6 @@ void main() {
 
 class settings extends StatelessWidget {
   const settings({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'My App',
-//       theme: ThemeData(
-
-//       ),
-//       home: SettingMain(),
-//     );
-//   }
-// }
-
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +28,6 @@ class settings extends StatelessWidget {
   }
 }
 
-
 class SettingMain extends StatefulWidget {
   const SettingMain({super.key});
 
@@ -50,19 +36,57 @@ class SettingMain extends StatefulWidget {
 }
 
 class _SettingMainHomeState extends State<SettingMain> {
+
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      padding: const EdgeInsets.all(20),
-      itemCount: options.length,
-      itemBuilder: (BuildContext context, int index) {
-        return Container(
-          height: 50,
-          color: Colors.green,
-          child: Center(child: Text(options[index])),
-        );
-      },
-      separatorBuilder: (BuildContext context, int index) => const Divider(),
+    return ListView(
+        children:ListTile.divideTiles(
+            context: context,
+            tiles: [
+              ListTile(
+                title: Text('Account Details'),
+                tileColor: Colors.blueGrey[100],
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<Widget>(builder: (BuildContext context) {
+                      return Scaffold(
+                        appBar: AppBar(title: const Text('Account Details')),
+                      );
+                    }),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Accessibility'),
+                tileColor: Colors.blueGrey[100],
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<Widget>(builder: (BuildContext context) {
+                      return Scaffold(
+                        appBar: AppBar(title: const Text('Accessibility')),
+                      );
+                    }),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Log Out'),
+                tileColor: Colors.blueGrey[100],
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<Widget>(builder: (BuildContext context) {
+                      return Scaffold(
+                        appBar: AppBar(title: const Text('Log Out')),
+                      );
+                    }),
+                  );
+                },
+              ),
+            ]
+        ).toList()
     );
   }
 }
