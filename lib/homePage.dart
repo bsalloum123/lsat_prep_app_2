@@ -1,6 +1,7 @@
 //import 'package:getwidget/getwidget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lsat_prep_app_2/CategoryRecognition.dart';
+import 'package:lsat_prep_app_2/flashCards.dart';
 import 'package:lsat_prep_app_2/practiceExam.dart';
 import 'package:lsat_prep_app_2/settings.dart';
 import 'package:lsat_prep_app_2/Profile.dart';
@@ -51,6 +52,7 @@ class homePage extends StatefulWidget {
 
 class _homeState extends State<homePage> {
   int currentPage = 0;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -77,19 +79,19 @@ class _homeState extends State<homePage> {
           if (index == 0){
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) {
-              return const homeDesign(); //Temporary black page
+              return const homeDesign();
             }));
           }
           if (index == 1){
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) {
-              return Profile(); //Temporary black page
+              return const Profile();
             }));
           }
           if (index == 2){
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) {
-              return const settings(); //Temporary black page
+              return const settings();
             }));
           }
           // setState(() {
@@ -124,13 +126,19 @@ class homeBody extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue[200],
                   textStyle: lsatTextStyle),
-              onPressed: (){}, child: const Text('Flash Cards'),
+              onPressed: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
+                  return const flashCardDesign();}),);
+              }, child: const Text('Flash Cards'),
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.red[200],
                   textStyle: lsatTextStyle),
-              onPressed: (){}, child: const Text('Category Recognition'),
+              onPressed: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
+                  return const cateRecogDesign();}),);
+              }, child: const Text('Category Recognition'),
             )
           ],
         ),

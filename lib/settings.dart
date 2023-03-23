@@ -14,6 +14,16 @@ class settings extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Settings'),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.help_outline),
+              tooltip: 'Show help',
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('This is a help bar')));
+              },
+            ),
+          ],
         ),
         body:
         ListView(
@@ -81,7 +91,7 @@ class settings extends StatelessWidget {
             if (index == 1){
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) {
-                return Profile();
+                return const Profile();
               }));
             }
             if (index == 2){

@@ -5,7 +5,7 @@ class Text extends StatelessWidget{
   final String _body;
   static const double _hPad = 20.0;
 
-  Text(this._title, this._body); // constructor
+  const Text(this._title, this._body, {super.key}); // constructor
   @override
   Widget build(BuildContext context){
     return Column(
@@ -22,7 +22,7 @@ class Text extends StatelessWidget{
          child: Text(_body),
             // style: Theme.of(context).textTheme.title),
        ),
-      ])
+      ]);
   }
 
 }
