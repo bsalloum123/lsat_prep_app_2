@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/Profile.dart';
 import 'package:lsat_prep_app_2/homePage.dart';
+import 'package:lsat_prep_app_2/profile_page.dart';
 import 'package:lsat_prep_app_2/settings.dart';
 
 class flashCardDesign extends StatelessWidget {
@@ -60,7 +61,7 @@ class _flashCardState extends State<flashCardPage> {
           if (index == 1){
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) {
-              return const Profile();
+              return const ProfilePage();
             }));
           }
           if (index == 2){

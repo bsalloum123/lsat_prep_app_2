@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/homePage.dart';
 import 'package:lsat_prep_app_2/Profile.dart';
+import 'package:lsat_prep_app_2/profile_page.dart';
+import 'package:lsat_prep_app_2/signIn.dart';
 
 // final List<String> options = <String>['Account Details', 'Visuals', 'Log Out'];
 // final List<int> colorCodes = <int>[600, 500, 100];
@@ -9,9 +11,7 @@ class settings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: lsatTheme,
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const Text('Settings'),
           actions: <Widget>[
@@ -65,9 +65,8 @@ class settings extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute<Widget>(builder: (BuildContext context) {
-                          return Scaffold(
-                            appBar: AppBar(title: const Text('Log Out')),
-                          );
+                          return signIn();
+                            //Scaffold(appBar: AppBar(title: const Text('Log Out')),
                         }),
                       );
                     },
@@ -91,7 +90,7 @@ class settings extends StatelessWidget {
             if (index == 1){
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) {
-                return const Profile();
+                return const ProfilePage();
               }));
             }
             if (index == 2){
@@ -106,7 +105,6 @@ class settings extends StatelessWidget {
           },
           // selectedIndex: currentPage,
         ),
-      ),
-    );
+      );
   }
 }

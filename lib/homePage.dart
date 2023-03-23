@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/CategoryRecognition.dart';
 import 'package:lsat_prep_app_2/flashCards.dart';
 import 'package:lsat_prep_app_2/practiceExam.dart';
+import 'package:lsat_prep_app_2/profile_page.dart';
 import 'package:lsat_prep_app_2/settings.dart';
 import 'package:lsat_prep_app_2/Profile.dart';
 
@@ -85,7 +86,7 @@ class _homeState extends State<homePage> {
           if (index == 1){
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) {
-              return const Profile();
+              return const ProfilePage();
             }));
           }
           if (index == 2){
