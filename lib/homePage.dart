@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/practiceExam.dart';
 import 'package:lsat_prep_app_2/settings.dart';
+import 'package:lsat_prep_app_2/Profile.dart';
 
 class homeDesign extends StatelessWidget {
   const homeDesign({Key? key}) : super(key: key);
@@ -55,6 +56,12 @@ class _homeState extends State<homePage> {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) {
               return const homeDesign(); //Temporary black page
+            }));
+          }
+          if (index == 1){
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) {
+              return Profile(); //Temporary black page
             }));
           }
           if (index == 2){
