@@ -1,6 +1,6 @@
 //import 'package:getwidget/getwidget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lsat_prep_app_2/Profile.dart';
 import 'package:lsat_prep_app_2/homePage.dart';
 import 'package:lsat_prep_app_2/settings.dart';
 
@@ -28,6 +28,7 @@ class pTestPage extends StatefulWidget {
 
 class _pTestState extends State<pTestPage> {
   //int currentPage = 0;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -54,13 +55,19 @@ class _pTestState extends State<pTestPage> {
           if (index == 0){
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) {
-              return const homeDesign(); //Temporary black page
+              return const homeDesign();
+            }));
+          }
+          if (index == 1){
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) {
+              return const Profile();
             }));
           }
           if (index == 2){
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) {
-              return const settings(); //Temporary black page
+              return const settings();
             }));
           }
           //setState(() {

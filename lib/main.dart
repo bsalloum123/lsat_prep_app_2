@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(title: const Text(_title)),
         body:
         // Calls the OpeningScreen to be the first page the user sees
-        signIn(),
+        const signIn(),
       ),
     );
   }

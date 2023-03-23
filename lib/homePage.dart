@@ -1,8 +1,34 @@
 //import 'package:getwidget/getwidget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lsat_prep_app_2/CategoryRecognition.dart';
+import 'package:lsat_prep_app_2/flashCards.dart';
 import 'package:lsat_prep_app_2/practiceExam.dart';
 import 'package:lsat_prep_app_2/settings.dart';
+import 'package:lsat_prep_app_2/Profile.dart';
+
+final colorMid = HexColor.fromHex('#FFC300');
+final colorDark = HexColor.fromHex('#DFAB00');
+final colorLight = HexColor.fromHex('#FFD240');
+
+const lsatTextStyle = TextStyle(
+  fontSize: 22,
+  fontStyle: FontStyle.normal,
+  color: Colors.black87,
+);
+
+var lsatTheme = ThemeData(
+  brightness: Brightness.light, // light or dark mode
+  primarySwatch: Colors.orange,
+  primaryColor: colorMid,
+  scaffoldBackgroundColor: HexColor.fromHex('#FFF8DF'),
+
+
+  // colorScheme: ColorScheme.fromSeed(
+  //   seedColor: Colors.purple,
+  //   brightness: Brightness.light
+  // )
+
+);
 
 class homeDesign extends StatelessWidget {
   const homeDesign({Key? key}) : super(key: key);
@@ -11,9 +37,7 @@ class homeDesign extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.purple
-      ),
+      theme: lsatTheme,
       home: const homePage(),
     );
   }
@@ -28,6 +52,7 @@ class homePage extends StatefulWidget {
 
 class _homeState extends State<homePage> {
   int currentPage = 0;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -54,13 +79,19 @@ class _homeState extends State<homePage> {
           if (index == 0){
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) {
-              return const homeDesign(); //Temporary black page
+              return const homeDesign();
+            }));
+          }
+          if (index == 1){
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) {
+              return const Profile();
             }));
           }
           if (index == 2){
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) {
-              return const settings(); //Temporary black page
+              return const settings();
             }));
           }
           // setState(() {
@@ -85,9 +116,7 @@ class homeBody extends StatelessWidget {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green[200],
-                  textStyle: const TextStyle(
-                    fontSize: 22,
-                    fontStyle: FontStyle.normal)),
+                  textStyle: lsatTextStyle),
               onPressed: (){
                 Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
                   return const pTestDesign();}),);
@@ -96,21 +125,33 @@ class homeBody extends StatelessWidget {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue[200],
-                  textStyle: const TextStyle(
-                  fontSize: 22,
-                  fontStyle: FontStyle.normal)),
-              onPressed: (){}, child: const Text('Flash Cards'),
+                  textStyle: lsatTextStyle),
+              onPressed: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
+                  return const flashCardDesign();}),);
+              }, child: const Text('Flash Cards'),
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.red[200],
-                  textStyle: const TextStyle(
-                  fontSize: 22,
-                  fontStyle: FontStyle.normal)),
-              onPressed: (){}, child: const Text('Category Recognition'),
+                  textStyle: lsatTextStyle),
+              onPressed: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
+                  return const cateRecogDesign();}),);
+              }, child: const Text('Category Recognition'),
             )
           ],
         ),
     );
+  }
+}
+
+class HexColor {
+  static Color fromHex(String hexString) {
+    final buffer = StringBuffer();
+    if (hexString.length <= 7) buffer.write('ff');
+    buffer.write(hexString.replaceFirst('#', ''));
+
+    return Color(int.parse(buffer.toString(), radix: 16));
   }
 }
