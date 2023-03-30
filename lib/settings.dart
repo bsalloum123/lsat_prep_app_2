@@ -17,6 +17,7 @@ class settings extends StatelessWidget {
             child: ListTile(
               title: const Text('Account Details', style: lsatTextStyle),
               tileColor: Colors.green[300],
+              trailing: const Icon(Icons.arrow_forward_ios),
               onTap: () {
                 Navigator.push(
                   context,
@@ -33,6 +34,7 @@ class settings extends StatelessWidget {
             child: ListTile(
               title: const Text('Accessibility', style:lsatTextStyle),
               tileColor: Colors.green[300],
+              trailing: const Icon(Icons.arrow_forward_ios),
               onTap: () {
                 Navigator.push(
                   context,
@@ -49,6 +51,7 @@ class settings extends StatelessWidget {
             child: ListTile(
               title: const Text('Log Out', style:lsatTextStyle),
               tileColor: Colors.green[300],
+              trailing: const Icon(Icons.logout ),
               onTap: () {
                 Navigator.push(
                   context,
