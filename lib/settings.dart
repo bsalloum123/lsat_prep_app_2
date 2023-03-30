@@ -10,55 +10,58 @@ class settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body:
-        ListView(
-            children:ListTile.divideTiles(
-                context: context,
-                tiles: [
-                  ListTile(
-                    title: const Text('Account Details', style: lsatTextStyle),
-                    tileColor: colorLight,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute<Widget>(builder: (BuildContext context) {
-                          return Scaffold(
-                            appBar: AppBar(title: const Text('Account Details')),
-                          );
-                        }),
-                      );
-                    },
-                  ),
-                  ListTile(
-                    title: const Text('Accessibility', style:lsatTextStyle),
-                    tileColor: colorLight,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute<Widget>(builder: (BuildContext context) {
-                          return Scaffold(
-                            appBar: AppBar(title: const Text('Accessibility')),
-                          );
-                        }),
-                      );
-                    },
-                  ),
-                  ListTile(
-                    title: const Text('Log Out', style:lsatTextStyle),
-                    tileColor: colorLight,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute<Widget>(builder: (BuildContext context) {
-                          return signIn();
-                            //Scaffold(appBar: AppBar(title: const Text('Log Out')),
-                        }),
-                      );
-                    },
-                  ),
-                ]
-            ).toList()
-        )
-      );
+      body:
+      ListView(
+        children: <Widget> [
+          Card(
+            child: ListTile(
+              title: const Text('Account Details', style: lsatTextStyle),
+              tileColor: Colors.green[300],
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute<Widget>(builder: (BuildContext context) {
+                    return Scaffold(
+                      appBar: AppBar(title: const Text('Account Details')),
+                    );
+                  }),
+                );
+              },
+            )
+          ),
+          Card(
+            child: ListTile(
+              title: const Text('Accessibility', style:lsatTextStyle),
+              tileColor: Colors.green[300],
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute<Widget>(builder: (BuildContext context) {
+                    return Scaffold(
+                      appBar: AppBar(title: const Text('Accessibility')),
+                    );
+                  }),
+                );
+              },
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: const Text('Log Out', style:lsatTextStyle),
+              tileColor: Colors.green[300],
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute<Widget>(builder: (BuildContext context) {
+                    return signIn();
+                    //Scaffold(appBar: AppBar(title: const Text('Log Out')),
+                  }),
+                );
+              },
+            ),
+          ),
+        ]
+      )
+    );
   }
 }
