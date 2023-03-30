@@ -6,6 +6,7 @@
 // Imports the necessary packages for the app to run
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:lsat_prep_app_2/colorSchemes.dart';
 import 'package:lsat_prep_app_2/authenticate.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:lsat_prep_app_2/signIn.dart';

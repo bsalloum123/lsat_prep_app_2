@@ -1,5 +1,6 @@
 //import 'package:getwidget/getwidget.dart';
 import 'package:flutter/material.dart';
+import 'package:lsat_prep_app_2/colorSchemes.dart';
 import 'package:lsat_prep_app_2/CategoryRecognition.dart';
 import 'package:lsat_prep_app_2/flashCards.dart';
 import 'package:lsat_prep_app_2/practiceExam.dart';
@@ -7,42 +8,18 @@ import 'package:lsat_prep_app_2/profile_page.dart';
 import 'package:lsat_prep_app_2/settings.dart';
 import 'package:lsat_prep_app_2/Profile.dart';
 
-final colorMid = HexColor.fromHex('#FFC300');
-final colorDark = HexColor.fromHex('#DFAB00');
-final colorLight = HexColor.fromHex('#FFD240');
-
-const lsatTextStyle = TextStyle(
-  fontSize: 22,
-  fontStyle: FontStyle.normal,
-  color: Colors.black87,
-);
-
-var lsatTheme = ThemeData(
-  brightness: Brightness.light, // light or dark mode
-  primarySwatch: Colors.orange,
-  primaryColor: colorMid,
-  scaffoldBackgroundColor: HexColor.fromHex('#FFF8DF'),
-
-
-  // colorScheme: ColorScheme.fromSeed(
-  //   seedColor: Colors.purple,
-  //   brightness: Brightness.light
-  // )
-
-);
-
-class homeDesign extends StatelessWidget {
-  const homeDesign({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: lsatTheme,
-      home: const homePage(),
-    );
-  }
-}
+// class homePage extends StatelessWidget {
+//   const homePage({Key? key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       theme: lsatTheme,
+//       home: const homePage(),
+//     );
+//   }
+// }
 
 class homePage extends StatefulWidget {
   const homePage({Key? key}) : super(key: key);
@@ -80,7 +57,7 @@ class _homeState extends State<homePage> {
           if (index == 0){
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) {
-              return const homeDesign();
+              return const homePage();
             }));
           }
           if (index == 1){
@@ -144,15 +121,5 @@ class homeBody extends StatelessWidget {
           ],
         ),
     );
-  }
-}
-
-class HexColor {
-  static Color fromHex(String hexString) {
-    final buffer = StringBuffer();
-    if (hexString.length <= 7) buffer.write('ff');
-    buffer.write(hexString.replaceFirst('#', ''));
-
-    return Color(int.parse(buffer.toString(), radix: 16));
   }
 }
