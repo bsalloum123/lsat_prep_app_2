@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lsat_prep_app_2/colorSchemes.dart';
 import 'package:lsat_prep_app_2/Profile.dart';
 import 'package:lsat_prep_app_2/homePage.dart';
 import 'package:lsat_prep_app_2/profile_page.dart';
@@ -55,7 +56,7 @@ class _flashCardState extends State<flashCardPage> {
           if (index == 0){
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) {
-              return const homeDesign();
+              return const homePage();
             }));
           }
           if (index == 1){

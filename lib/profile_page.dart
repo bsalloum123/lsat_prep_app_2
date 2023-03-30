@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lsat_prep_app_2/colorSchemes.dart';
 import 'package:lsat_prep_app_2/settings.dart';
 import 'homePage.dart';
 
@@ -39,7 +40,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 child: Container(
                   height: 250,
                   decoration: BoxDecoration(
-                    color: Colors.green[300],
+                    color: Colors.green[400],
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -89,7 +90,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       title: Text(
                         'Email',
                         style: TextStyle(
-                          color: Colors.green[200],
+                          color: Colors.green[400],
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
@@ -104,7 +105,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       title: Text(
                         'temp1',
                         style: TextStyle(
-                          color: Colors.green[200],
+                          color: Colors.green[400],
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
@@ -119,7 +120,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       title: Text(
                         'temp2',
                         style: TextStyle(
-                          color: Colors.green[200],
+                          color: Colors.green[400],
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
@@ -144,7 +145,7 @@ class _ProfilePageState extends State<ProfilePage> {
               if (index == 0){
                 Navigator.push(
                     context, MaterialPageRoute(builder: (context) {
-                  return const homeDesign();
+                  return const homePage();
                 }));
               }
               if (index == 1){

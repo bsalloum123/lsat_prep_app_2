@@ -4,6 +4,7 @@
 // Imports the necessary packages for the app to run
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:lsat_prep_app_2/colorSchemes.dart';
 import 'package:lsat_prep_app_2/currentUser.dart';
 import 'package:lsat_prep_app_2/authenticate.dart';
 import 'package:lsat_prep_app_2/homePage.dart';
@@ -35,17 +36,17 @@ class _signInState extends State<signIn> {
             Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
-                child: const Text(
+                child: Text(
                   'Welcome!',
                   style: TextStyle(
-                      color: Colors.blue,
+                      color: Colors.green[400],
                       fontWeight: FontWeight.w500,
                       fontSize: 30),
                 )),
             Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
-                child: const Text(
+                child: Text(
                   'Sign In',
                   style: TextStyle(fontSize: 20),
                 )),
@@ -96,7 +97,7 @@ class _signInState extends State<signIn> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                const Text('Don\'t  have an account?'),
+                const Text('Don\'t have an account?'),
                 TextButton(
                   child: const Text(
                     'Register Now',
@@ -136,7 +137,7 @@ class _signInState extends State<signIn> {
 
         Navigator.push(
             context, MaterialPageRoute(builder: (context) {
-          return const homeDesign(); //Temporary black page
+          return const homePage(); //Temporary black page
         }));
       }
       // User is signed in

@@ -3,6 +3,7 @@
 
 // Imports the necessary packages for the app to run
 import 'package:flutter/material.dart';
+import 'package:lsat_prep_app_2/colorSchemes.dart';
 import 'package:lsat_prep_app_2/profile_page.dart';
 import 'package:lsat_prep_app_2/settings.dart';
 import 'package:lsat_prep_app_2/signIn.dart';
@@ -29,10 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: _title,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-
-      ),
+      theme: lsatTheme,
       home: Scaffold(
         appBar: AppBar(
           title: const Text(_title),
