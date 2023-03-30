@@ -5,13 +5,7 @@ class cateRecogDesign extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          primarySwatch: Colors.red
-      ),
-      home: const cateRecogPage(),
-    );
+    return const cateRecogPage();
   }
 }
 
