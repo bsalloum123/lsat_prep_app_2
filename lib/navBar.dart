@@ -40,6 +40,16 @@ class _BasicBottomNavBarState extends State<BasicBottomNavBar> {
       appBar: AppBar(
         // This controls the text shown on the header
         title: const Text('Sign out'),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.help_outline),
+            tooltip: 'Show help',
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('This is a help bar')));
+            },
+          ),
+        ],
       ),
       // This puts whatever page the selectedIndex has on the center of the app screen
       body: Center(

@@ -10,19 +10,6 @@ class settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Settings'),
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.help_outline),
-              tooltip: 'Show help',
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('This is a help bar')));
-              },
-            ),
-          ],
-        ),
         body:
         ListView(
             children:ListTile.divideTiles(
