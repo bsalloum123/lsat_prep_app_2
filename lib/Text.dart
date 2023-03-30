@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+/*
 class Text extends StatelessWidget{
   final String title;
   final String _body;
@@ -26,3 +26,6 @@ class Text extends StatelessWidget{
   }
 
 }
+
+
+ */

@@ -1,10 +1,5 @@
 //import 'package:getwidget/getwidget.dart';
 import 'package:flutter/material.dart';
-import 'package:lsat_prep_app_2/colorSchemes.dart';
-import 'package:lsat_prep_app_2/Profile.dart';
-import 'package:lsat_prep_app_2/homePage.dart';
-import 'package:lsat_prep_app_2/profile_page.dart';
-import 'package:lsat_prep_app_2/settings.dart';
 
 class pTestDesign extends StatelessWidget {
   const pTestDesign({Key? key}) : super(key: key);
@@ -46,38 +41,7 @@ class _pTestState extends State<pTestPage> {
           ),
         ],
       ),
-      body: const pTestBody(),
-      bottomNavigationBar: NavigationBar(
-        destinations: const [
-          NavigationDestination(icon: Icon(Icons.home), label: 'home'),
-          NavigationDestination(icon: Icon(Icons.person), label: 'profile'),
-          NavigationDestination(icon: Icon(Icons.settings), label: 'settings'),
-        ],
-        onDestinationSelected: (int index){
-          if (index == 0){
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) {
-              return const homePage();
-            }));
-          }
-          if (index == 1){
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) {
-              return const ProfilePage();
-            }));
-          }
-          if (index == 2){
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) {
-              return const settings();
-            }));
-          }
-          //setState(() {
-          //  currentPage = index;
-          //});
-        },
-        //selectedIndex: currentPage,
-      ),
+      body: const pTestBody()
     );
   }
 }

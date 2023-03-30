@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/colorSchemes.dart';
-import 'package:lsat_prep_app_2/homePage.dart';
-import 'package:lsat_prep_app_2/Profile.dart';
-import 'package:lsat_prep_app_2/profile_page.dart';
 import 'package:lsat_prep_app_2/signIn.dart';
 
 // final List<String> options = <String>['Account Details', 'Visuals', 'Log Out'];
@@ -74,38 +71,7 @@ class settings extends StatelessWidget {
                   ),
                 ]
             ).toList()
-        ),
-        bottomNavigationBar: NavigationBar(
-          destinations: const [
-            NavigationDestination(icon: Icon(Icons.home), label: 'home'),
-            NavigationDestination(icon: Icon(Icons.person), label: 'profile'),
-            NavigationDestination(icon: Icon(Icons.settings), label: 'settings'),
-          ],
-          onDestinationSelected: (int index){
-            if (index == 0){
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) {
-                return const homePage();
-              }));
-            }
-            if (index == 1){
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) {
-                return const ProfilePage();
-              }));
-            }
-            if (index == 2){
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) {
-                return const settings();
-              }));
-            }
-            // setState(() {
-            //   currentPage = index;
-            // });
-          },
-          // selectedIndex: currentPage,
-        ),
+        )
       );
   }
 }

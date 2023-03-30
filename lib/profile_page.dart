@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/colorSchemes.dart';
-import 'package:lsat_prep_app_2/settings.dart';
-import 'homePage.dart';
+import 'currentUser.dart';
 
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({Key? key}) : super(key: key);
-
+  const ProfilePage({super.key, required this.currentUser});
+  final CurrentUser currentUser;
 
   @override
   _ProfilePageState createState() => _ProfilePageState();
@@ -15,26 +14,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Profile',
-        theme: lsatTheme,
-        home:
-        Scaffold(
-          appBar: AppBar(
-            title: const Text('Profile'),
-            actions: <Widget>[
-              IconButton(
-                icon: const Icon(Icons.help_outline),
-                tooltip: 'Show help',
-                onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('This is a help bar')));
-                },
-              ),
-            ],
-          ),
-          body:
-          ListView(
+    return ListView(
             children: <Widget>[
               Expanded(
                 child: Container(
@@ -64,16 +44,14 @@ class _ProfilePageState extends State<ProfilePage> {
                       SizedBox(
                         height: 10,
                       ),
-                      Text(
-                        'Name',
+                      Text(widget.currentUser.firstName + ' ' + widget.currentUser.lastName,
                         style: TextStyle(
                           fontSize: 35,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
                       ),
-                      Text(
-                        'Username',
+                      Text(widget.currentUser.username,
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 25,
@@ -96,7 +74,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                       ),
                       subtitle: Text(
-                        'email...',
+                        widget.currentUser.email,
                         style: TextStyle(fontSize: 18),
                       ),
                     ),
@@ -134,40 +112,6 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               )
             ],
-          ),
-          bottomNavigationBar: NavigationBar(
-            destinations: const [
-              NavigationDestination(icon: Icon(Icons.home), label: 'home'),
-              NavigationDestination(icon: Icon(Icons.person), label: 'profile'),
-              NavigationDestination(icon: Icon(Icons.settings), label: 'settings'),
-            ],
-            onDestinationSelected: (int index){
-              if (index == 0){
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) {
-                  return const homePage();
-                }));
-              }
-              if (index == 1){
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) {
-                  return const ProfilePage();
-                }));
-              }
-              if (index == 2){
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) {
-                  return const settings();
-                }));
-              }
-              // setState(() {
-              //   currentPage = index;
-              // });
-            },
-            // selectedIndex: currentPage,
-          ),
-        ),
-      );
-
+          );
   }
 }

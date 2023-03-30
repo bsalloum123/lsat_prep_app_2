@@ -4,13 +4,13 @@
 // Imports the necessary packages for the app to run
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:lsat_prep_app_2/colorSchemes.dart';
 import 'package:lsat_prep_app_2/currentUser.dart';
 import 'package:lsat_prep_app_2/authenticate.dart';
 import 'package:lsat_prep_app_2/homePage.dart';
 import 'package:lsat_prep_app_2/signUp.dart';
-import 'package:lsat_prep_app_2/TempPage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+import 'navBar.dart';
 
 final userRef = FirebaseFirestore.instance.collection('users');
 
@@ -137,7 +137,7 @@ class _signInState extends State<signIn> {
 
         Navigator.push(
             context, MaterialPageRoute(builder: (context) {
-          return const homePage(); //Temporary black page
+          return BasicBottomNavBar(title: '', currentUser: currentUser); //Temporary black page
         }));
       }
       // User is signed in

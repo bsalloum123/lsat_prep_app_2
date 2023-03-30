@@ -4,9 +4,6 @@ import 'package:lsat_prep_app_2/colorSchemes.dart';
 import 'package:lsat_prep_app_2/CategoryRecognition.dart';
 import 'package:lsat_prep_app_2/flashCards.dart';
 import 'package:lsat_prep_app_2/practiceExam.dart';
-import 'package:lsat_prep_app_2/profile_page.dart';
-import 'package:lsat_prep_app_2/settings.dart';
-import 'package:lsat_prep_app_2/Profile.dart';
 
 // class homePage extends StatelessWidget {
 //   const homePage({Key? key}) : super(key: key);
@@ -46,38 +43,7 @@ class _homeState extends State<homePage> {
           ),
         ],
       ),
-      body: const homeBody(),
-      bottomNavigationBar: NavigationBar(
-        destinations: const [
-          NavigationDestination(icon: Icon(Icons.home), label: 'home'),
-          NavigationDestination(icon: Icon(Icons.person), label: 'profile'),
-          NavigationDestination(icon: Icon(Icons.settings), label: 'settings'),
-        ],
-        onDestinationSelected: (int index){
-          if (index == 0){
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) {
-              return const homePage();
-            }));
-          }
-          if (index == 1){
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) {
-              return const ProfilePage();
-            }));
-          }
-          if (index == 2){
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) {
-              return const settings();
-            }));
-          }
-          // setState(() {
-          //   currentPage = index;
-          // });
-        },
-        selectedIndex: currentPage,
-      ),
+      body: const homeBody()
     );
   }
 }
