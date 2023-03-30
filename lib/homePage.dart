@@ -43,33 +43,49 @@ class homeBody extends StatelessWidget {
     return Center(
         child:
         Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green[200],
-                  textStyle: lsatTextStyle),
-              onPressed: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
-                  return const pTestDesign();}),);
-              }, child: const Text('Practice Exam'),
+            Padding(
+              padding: const EdgeInsets.all(50.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green[200],
+                    textStyle: lsatTextStyle,
+                    minimumSize: const Size(300, 75),
+                    elevation: 30), // adding margin
+                onPressed: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
+                    return const pTestDesign();}),);
+                }, child: const Text('Practice Exam'),
+              ),
             ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue[200],
-                  textStyle: lsatTextStyle),
-              onPressed: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
-                  return const flashCardDesign();}),);
-              }, child: const Text('Flash Cards'),
+            Padding(
+              padding: const EdgeInsets.all(50.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue[200],
+                    textStyle: lsatTextStyle,
+                    minimumSize: const Size(300, 75),
+                    elevation: 30),
+                onPressed: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
+                    return const flashCardDesign();}),);
+                }, child: const Text('Flash Cards'),
+              ),
             ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red[200],
-                  textStyle: lsatTextStyle),
-              onPressed: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
-                  return const cateRecogDesign();}),);
-              }, child: const Text('Category Recognition'),
+            Padding(
+              padding: const EdgeInsets.all(50.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red[200],
+                    textStyle: lsatTextStyle,
+                    minimumSize: const Size(300, 75),
+                    elevation: 30), // adding margin
+                onPressed: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
+                    return const cateRecogDesign();}),);
+                }, child: const Text('Category Recognition'),
+              ),
             )
           ],
         ),
