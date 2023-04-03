@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
   final int resultScore;
-  final Function resetHandler;
+  final VoidCallback resetHandler;
 
   const Result(this.resultScore, this.resetHandler, {Key? key})
       : super(key: key);
@@ -46,7 +46,7 @@ class Result extends StatelessWidget {
             textAlign: TextAlign.center,
           ), //Text
           TextButton(
-            onPressed: resetHandler(),
+            onPressed: resetHandler,
             child: Container(
               color: Colors.green,
               padding: const EdgeInsets.all(14),
@@ -56,18 +56,8 @@ class Result extends StatelessWidget {
               ),
             ),
           ),
-          // FlatButton is deprecated and should not be used
-          // Use TextButton instead
-
-          // FlatButton(
-          // child: Text(
-          //	 'Restart Quiz!',
-          // ), //Text
-          // textColor: Colors.blue,
-          // onPressed: resetHandler(),
-          // ), //FlatButton
-        ], //<Widget>[]
-      ), //Column
-    ); //Center
+        ],
+      ),
+    );
   }
 }

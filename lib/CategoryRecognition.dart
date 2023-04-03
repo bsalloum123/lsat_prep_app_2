@@ -83,6 +83,12 @@ class _cateRecogState extends State<cateRecogDesign> {
       _questionIndex = 0;
       _totalScore = 0;
     });
+    // Future.delayed(const Duration(seconds: 2), () async {
+    //   setState(() {
+    //     _questionIndex = 0;
+    //     _totalScore = 0;
+    //   });
+    // });
   }
 
   void _answerQuestion(int score) {
@@ -91,6 +97,12 @@ class _cateRecogState extends State<cateRecogDesign> {
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
+    // Future.delayed(const Duration(seconds: 2), () async {
+    //   setState(() {
+    //     _questionIndex = _questionIndex + 1;
+    //   });
+    // });
+
     // ignore: avoid_print
     print(_questionIndex);
     if (_questionIndex < _questions.length) {
@@ -131,10 +143,11 @@ class _cateRecogState extends State<cateRecogDesign> {
                       child:
                       Padding(
                         padding: const EdgeInsets.all(30.0),
-                        child: _questionIndex < _questions.length ? Quiz(
-                          answerQuestion: _answerQuestion,
-                          questionIndex: _questionIndex,
-                          questions: _questions,
+                        child: _questionIndex < _questions.length
+                          ? Quiz(
+                            answerQuestion: _answerQuestion,
+                            questionIndex: _questionIndex,
+                            questions: _questions,
                         ) //Quiz
                             : Result(_totalScore, _resetQuiz),
                       ),

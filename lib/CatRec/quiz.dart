@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import './answer.dart';
 import './question.dart';
 
@@ -21,11 +20,12 @@ class Quiz extends StatelessWidget {
       children: [
         Question(
           questions[questionIndex]['questionText'].toString(),
-        ), //Question
+        ),
         ...(questions[questionIndex]['answers'] as List<Map<String, Object>>)
             .map((answer) {
-          return const Text('data');//Answer(
-                  //() => answerQuestion(answer['score']), answer['text'].toString());
+          return Answer(() => answerQuestion(answer['score']),
+              answer['text'].toString());
+                // const Text('data');
         }).toList()
       ],
     ); //Column
