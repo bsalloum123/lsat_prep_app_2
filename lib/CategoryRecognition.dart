@@ -23,6 +23,7 @@ class cateRecogDesign extends StatefulWidget {
 class _cateRecogState extends State<cateRecogDesign> {
   final _questions = const [
     {
+      'contextText': '1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
       'questionText': 'Q1. Who created Flutter?',
       'answers': [
         {'text': 'Facebook', 'score': -2},
@@ -32,6 +33,7 @@ class _cateRecogState extends State<cateRecogDesign> {
       ],
     },
     {
+      'contextText': '2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
       'questionText': 'Q2. What is Flutter?',
       'answers': [
         {'text': 'Android Development Kit', 'score': -2},
@@ -45,6 +47,7 @@ class _cateRecogState extends State<cateRecogDesign> {
       ],
     },
     {
+      'contextText': '3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
       'questionText': ' Q3. Which programing language is used by Flutter',
       'answers': [
         {'text': 'Ruby', 'score': -2},
@@ -54,6 +57,7 @@ class _cateRecogState extends State<cateRecogDesign> {
       ],
     },
     {
+      'contextText': '4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
       'questionText': 'Q4. Who created Dart programing language?',
       'answers': [
         {'text': 'Lars Bak and Kasper Lund', 'score': 10},
@@ -63,6 +67,7 @@ class _cateRecogState extends State<cateRecogDesign> {
       ],
     },
     {
+      'contextText': '5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
       'questionText':
       'Q5. Is Flutter for Web and Desktop available in stable version?',
       'answers': [
@@ -148,7 +153,7 @@ class _cateRecogState extends State<cateRecogDesign> {
                             answerQuestion: _answerQuestion,
                             questionIndex: _questionIndex,
                             questions: _questions,
-                        ) //Quiz
+                        )
                             : Result(_totalScore, _resetQuiz),
                       ),
                     ),
