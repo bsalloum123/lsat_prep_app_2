@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lsat_prep_app_2/colorSchemes.dart';
 
 class Answer extends StatelessWidget {
   final VoidCallback selectHandler;
@@ -15,7 +16,7 @@ class Answer extends StatelessWidget {
         style: ButtonStyle(
             textStyle:
             MaterialStateProperty.all(const TextStyle(color: Colors.white)),
-            backgroundColor: MaterialStateProperty.all(Colors.green[300])),
+            backgroundColor: MaterialStateProperty.all(Colors.orange[200])),
         child: Text(answerText),
       ),
     );

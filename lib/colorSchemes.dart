@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 final colorMid = HexColor.fromHex('#FFC300');
 final colorDark = HexColor.fromHex('#DFAB00');
 final colorLight = HexColor.fromHex('#FFD240');
+final colorBackground = HexColor.fromHex('#FFF8DF');
+final greenShade =  Colors.green[200];
 
 const lsatTextStyle = TextStyle(
   fontSize: 22,

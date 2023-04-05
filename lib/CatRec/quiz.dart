@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './answer.dart';
 import './question.dart';
 import './context.dart';
+import 'package:lsat_prep_app_2/colorSchemes.dart';
 
 class Quiz extends StatelessWidget {
   final List<Map<String, Object>> questions;
@@ -20,11 +21,11 @@ class Quiz extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.all(0),
-      elevation: 4,
-      child: SizedBox( //stops card from changing sizes, can overflow
+      elevation: 4.0,
+      color: Colors.green[200],
+        child: SizedBox( //stops card from changing sizes, can overflow
         width: 500,
         height: 650,
-
         child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
           child: Column(

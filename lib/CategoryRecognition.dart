@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 //import 'CatRec/answer.dart';
 //import 'CatRec/question.dart';
 import 'CatRec/quiz.dart';
@@ -23,7 +24,7 @@ class cateRecogDesign extends StatefulWidget {
 class _cateRecogState extends State<cateRecogDesign> {
   final _questions = const [
     {
-      'contextText': '1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
+      'contextText': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
       'questionText': 'Q1. Who created Flutter?',
       'answers': [
         {'text': 'Facebook', 'score': -2},
@@ -33,7 +34,7 @@ class _cateRecogState extends State<cateRecogDesign> {
       ],
     },
     {
-      'contextText': '2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
+      'contextText': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
       'questionText': 'Q2. What is Flutter?',
       'answers': [
         {'text': 'Android Development Kit', 'score': -2},
@@ -47,8 +48,8 @@ class _cateRecogState extends State<cateRecogDesign> {
       ],
     },
     {
-      'contextText': '3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
-      'questionText': ' Q3. Which programing language is used by Flutter',
+      'contextText': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
+      'questionText': 'Q3. Which programing language is used by Flutter',
       'answers': [
         {'text': 'Ruby', 'score': -2},
         {'text': 'Dart', 'score': 10},
@@ -57,7 +58,7 @@ class _cateRecogState extends State<cateRecogDesign> {
       ],
     },
     {
-      'contextText': '4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
+      'contextText': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
       'questionText': 'Q4. Who created Dart programing language?',
       'answers': [
         {'text': 'Lars Bak and Kasper Lund', 'score': 10},
@@ -67,9 +68,8 @@ class _cateRecogState extends State<cateRecogDesign> {
       ],
     },
     {
-      'contextText': '5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
-      'questionText':
-      'Q5. Is Flutter for Web and Desktop available in stable version?',
+      'contextText': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
+      'questionText': 'Q5. Is Flutter for Web and Desktop available in stable version?',
       'answers': [
         {
           'text': 'Yes',
@@ -86,14 +86,19 @@ class _cateRecogState extends State<cateRecogDesign> {
   // The _onItemTapped method controls which page on the app is shown
   void _onItemTapped(int index) {
     setState(() {
-      if (index == 0){
-        print('0');
-      }
-      else if (index == 1){
-        print('1');
-      }
-      else {
-        print('2');
+      if (_questionIndex != 5) {
+        if (index == 0 && _questionIndex > 0) {
+          print('Going back!');
+          _questionIndex = _questionIndex - 1;
+        } else if (index == 1) {
+          print('Submit button');
+          _questionIndex = _questions.length;
+        } else {
+          print('Going forwards!');
+          _questionIndex = _questionIndex + 1;
+        }
+      } else {
+        print("Already submitted");
       }
     });
   }
@@ -112,7 +117,8 @@ class _cateRecogState extends State<cateRecogDesign> {
   }
 
   void _answerQuestion(int score) {
-    _totalScore += score;
+    // + 1 no matter right or wrong for right now
+    _totalScore += 1;
 
     setState(() {
       _questionIndex = _questionIndex + 1;
@@ -186,13 +192,13 @@ class _cateRecogState extends State<cateRecogDesign> {
                       child:
                       Padding(
                         padding: const EdgeInsets.all(5.0),
-                        child: _questionIndex < _questions.length && _questionIndex > -1
+                        child: _questionIndex < _questions.length
                           ? Quiz(
                             answerQuestion: _answerQuestion,
                             questionIndex: _questionIndex,
                             questions: _questions,
                         )
-                            : Result(_totalScore, _resetQuiz),
+                            : Result(_totalScore, _resetQuiz, _questions.length, (_questions.length - _totalScore)),
                       ),
                     ),
                   ),
