@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'CatRec/answer.dart';
-import 'CatRec/question.dart';
+//import 'CatRec/answer.dart';
+//import 'CatRec/question.dart';
 import 'CatRec/quiz.dart';
 import 'CatRec/result.dart';
 
@@ -57,7 +57,7 @@ class _cateRecogState extends State<cateRecogDesign> {
       ],
     },
     {
-      'contextText': '4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
+      'contextText': '4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
       'questionText': 'Q4. Who created Dart programing language?',
       'answers': [
         {'text': 'Lars Bak and Kasper Lund', 'score': 10},
@@ -82,6 +82,21 @@ class _cateRecogState extends State<cateRecogDesign> {
 
   var _questionIndex = 0;
   var _totalScore = 0;
+
+  // The _onItemTapped method controls which page on the app is shown
+  void _onItemTapped(int index) {
+    setState(() {
+      if (index == 0){
+        print('0');
+      }
+      else if (index == 1){
+        print('1');
+      }
+      else {
+        print('2');
+      }
+    });
+  }
 
   void _resetQuiz() {
     setState(() {
@@ -122,6 +137,29 @@ class _cateRecogState extends State<cateRecogDesign> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        bottomNavigationBar:
+          BottomNavigationBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0.0,
+            items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.arrow_back),
+              label: 'Previous',
+              backgroundColor: Colors.black,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.check_circle_outline),
+              label: 'Submit',
+              backgroundColor: Colors.black,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.arrow_forward),
+              label: 'Next',
+              backgroundColor: Colors.black,
+            ),
+        ],
+          onTap: _onItemTapped,
+          ),
         appBar: AppBar(
           title: const Text('Category Recognition'),
           actions: <Widget>[
@@ -147,8 +185,8 @@ class _cateRecogState extends State<cateRecogDesign> {
                       scrollDirection: Axis.vertical,
                       child:
                       Padding(
-                        padding: const EdgeInsets.all(30.0),
-                        child: _questionIndex < _questions.length
+                        padding: const EdgeInsets.all(5.0),
+                        child: _questionIndex < _questions.length && _questionIndex > -1
                           ? Quiz(
                             answerQuestion: _answerQuestion,
                             questionIndex: _questionIndex,

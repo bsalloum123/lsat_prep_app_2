@@ -15,7 +15,7 @@ class Answer extends StatelessWidget {
         style: ButtonStyle(
             textStyle:
             MaterialStateProperty.all(const TextStyle(color: Colors.white)),
-            backgroundColor: MaterialStateProperty.all(Colors.green)),
+            backgroundColor: MaterialStateProperty.all(Colors.green[300])),
         child: Text(answerText),
       ),
     );
