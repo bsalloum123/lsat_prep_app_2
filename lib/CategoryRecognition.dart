@@ -25,39 +25,36 @@ class _cateRecogState extends State<cateRecogDesign> {
   final _questions = const [
     {
       'contextText':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
-      'questionText': 'Q1. Who created Flutter?',
+          'Negotiations between the union and the trucking industry will not resume unless one or the other of these parties agrees to make concessions. The trucking industry will not make any concessions without certain prior concessions being made by the union, and the union will make concessions only if the government agrees to act as mediator.',
+      'questionText': '1. If the statements above are true, which one of the following must also be true on the basis of them?',
       'answers': [
-        {'text': 'Facebook', 'score': -2},
-        {'text': 'Adobe', 'score': -2},
-        {'text': 'Google', 'score': 10},
-        {'text': 'Microsoft', 'score': -2},
+        {'text': 'Identify a Flaw', 'score': -2},
+        {'text': 'Strengthen', 'score': -2},
+        {'text': 'Implication', 'score': 10},
+        {'text': 'Sufficient Assumptions', 'score': -2},
       ],
     },
     {
       'contextText':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
-      'questionText': 'Q2. What is Flutter?',
+          'Scientists analyzing air bubbles that had been trapped in Antarctic ice during the Earth\'s last ice age found that the ice-age atmosphere had contained unusually large amounts of ferrous material and surprisingly small amounts of carbon dioxide. One scientist noted that algae absorb carbon dioxide from the atmosphere. The scientist hypothesized that the ferrous material, which was contained in atmospheric dust, had promoted a great increase in the population of Antarctic algae such as diatoms.',
+      'questionText': '2. Which one of the following, if true, would most seriously undermine the scientist\'s hypothesis?',
       'answers': [
-        {'text': 'Android Development Kit', 'score': -2},
-        {'text': 'IOS Development Kit', 'score': -2},
-        {'text': 'Web Development Kit', 'score': -2},
-        {
-          'text':
-              'SDK to build beautiful IOS, Android, Web & Desktop Native Apps',
-          'score': 10
+        {'text': 'Others', 'score': -2},
+        {'text': 'Principle', 'score': -2},
+        {'text': 'Implication', 'score': -2},
+        {'text': 'Weaken', 'score': 10
         },
       ],
     },
     {
       'contextText':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
-      'questionText': 'Q3. Which programing language is used by Flutter',
+          'Many breakfast cereals are fortified with vitamin supplements. Some of these cereals provide 100 percent of the recommended daily requirement of vitamins. Nevertheless, a well-balanced breakfast, including a variety of foods, is a better source of those vitamins than are such fortified breakfast cereals alone.',
+      'questionText': '3. Which of the following, if true, would most strongly support the position above?',
       'answers': [
-        {'text': 'Ruby', 'score': -2},
-        {'text': 'Dart', 'score': 10},
-        {'text': 'C++', 'score': -2},
-        {'text': 'Kotlin', 'score': -2},
+        {'text': 'Sufficient Assumptions', 'score': -2},
+        {'text': 'Strengthen', 'score': 10},
+        {'text': 'Others', 'score': -2},
+        {'text': 'Identify a Flaw', 'score': -2},
       ],
     },
     {
