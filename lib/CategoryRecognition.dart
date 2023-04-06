@@ -24,7 +24,8 @@ class cateRecogDesign extends StatefulWidget {
 class _cateRecogState extends State<cateRecogDesign> {
   final _questions = const [
     {
-      'contextText': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
+      'contextText':
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
       'questionText': 'Q1. Who created Flutter?',
       'answers': [
         {'text': 'Facebook', 'score': -2},
@@ -34,7 +35,8 @@ class _cateRecogState extends State<cateRecogDesign> {
       ],
     },
     {
-      'contextText': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
+      'contextText':
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
       'questionText': 'Q2. What is Flutter?',
       'answers': [
         {'text': 'Android Development Kit', 'score': -2},
@@ -42,13 +44,14 @@ class _cateRecogState extends State<cateRecogDesign> {
         {'text': 'Web Development Kit', 'score': -2},
         {
           'text':
-          'SDK to build beautiful IOS, Android, Web & Desktop Native Apps',
+              'SDK to build beautiful IOS, Android, Web & Desktop Native Apps',
           'score': 10
         },
       ],
     },
     {
-      'contextText': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
+      'contextText':
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
       'questionText': 'Q3. Which programing language is used by Flutter',
       'answers': [
         {'text': 'Ruby', 'score': -2},
@@ -58,7 +61,8 @@ class _cateRecogState extends State<cateRecogDesign> {
       ],
     },
     {
-      'contextText': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
+      'contextText':
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
       'questionText': 'Q4. Who created Dart programing language?',
       'answers': [
         {'text': 'Lars Bak and Kasper Lund', 'score': 10},
@@ -68,8 +72,10 @@ class _cateRecogState extends State<cateRecogDesign> {
       ],
     },
     {
-      'contextText': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
-      'questionText': 'Q5. Is Flutter for Web and Desktop available in stable version?',
+      'contextText':
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
+      'questionText':
+          'Q5. Is Flutter for Web and Desktop available in stable version?',
       'answers': [
         {
           'text': 'Yes',
@@ -143,69 +149,67 @@ class _cateRecogState extends State<cateRecogDesign> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar:
-          BottomNavigationBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0.0,
-            items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.arrow_back),
-              label: 'Previous',
-              backgroundColor: Colors.black,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.check_circle_outline),
-              label: 'Submit',
-              backgroundColor: Colors.black,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.arrow_forward),
-              label: 'Next',
-              backgroundColor: Colors.black,
-            ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        iconSize: 40,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.arrow_back),
+            label: 'Previous',
+            backgroundColor: Colors.black,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.check_circle_outline),
+            label: 'Submit',
+            backgroundColor: Colors.black,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.arrow_forward),
+            label: 'Next',
+            backgroundColor: Colors.black,
+          ),
         ],
-          onTap: _onItemTapped,
+        onTap: _onItemTapped,
+        // selectedItemColor: Colors.blue,
+      ),
+      appBar: AppBar(
+        title: const Text('Category Recognition'),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.help_outline),
+            tooltip: 'Show help',
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('This is a help bar')));
+            },
           ),
-        appBar: AppBar(
-          title: const Text('Category Recognition'),
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.help_outline),
-              tooltip: 'Show help',
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('This is a help bar')));
-              },
-            ),
-          ],
-        ),
-        body:
-        Center(
-          child: Container(
-            margin: const EdgeInsets.all(15.0), // adding margin
-            child:
-            Column(
-                children: [
-                  Expanded(
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.vertical,
-                      child:
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: _questionIndex < _questions.length
-                          ? Quiz(
-                            answerQuestion: _answerQuestion,
-                            questionIndex: _questionIndex,
-                            questions: _questions,
+        ],
+      ),
+      body: Center(
+        child: Container(
+          margin: const EdgeInsets.all(15.0), // adding margin
+          child: Column(children: [
+            Expanded(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: _questionIndex < _questions.length
+                      ? Quiz(
+                          answerQuestion: _answerQuestion,
+                          questionIndex: _questionIndex,
+                          questions: _questions,
                         )
-                            : Result(_totalScore, _resetQuiz, _questions.length, (_questions.length - _totalScore)),
-                      ),
-                    ),
-                  ),
-                ]
+                      : Result(_totalScore, _resetQuiz, _questions.length,
+                          (_questions.length - _totalScore)),
+                ),
+              ),
             ),
-          ),
+          ]),
         ),
+      ),
     );
   }
 }
