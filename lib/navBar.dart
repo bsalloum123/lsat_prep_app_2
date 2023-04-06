@@ -27,6 +27,12 @@ class _BasicBottomNavBarState extends State<BasicBottomNavBar> {
     settings()
   ];
 
+  late final List<Widget> _titles = <Widget>[
+    Text("Home"),
+    Text("Profile"),
+    Text("Settings")
+  ];
+
   // The _onItemTapped method controls which page on the app is shown
   void _onItemTapped(int index) {
     setState(() {
@@ -39,7 +45,7 @@ class _BasicBottomNavBarState extends State<BasicBottomNavBar> {
     return Scaffold(
       appBar: AppBar(
         // This controls the text shown on the header
-        title: const Text('Sign out'),
+        title: _titles[_selectedIndex],
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.help_outline),

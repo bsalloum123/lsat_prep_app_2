@@ -29,8 +29,8 @@ class _homeState extends State<homePage> {
   int currentPage = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: const homeBody()
+    return const Scaffold(
+      body: homeBody()
     );
   }
 }
