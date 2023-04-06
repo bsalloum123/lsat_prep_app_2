@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:lsat_prep_app_2/colorSchemes.dart';
-import 'colorSchemes.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'currentUser.dart';
 
 
@@ -62,7 +62,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Text(widget.currentUser.firstName + ' ' + widget.currentUser.lastName,

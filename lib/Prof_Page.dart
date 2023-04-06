@@ -7,7 +7,8 @@ import 'currentUser.dart';
 
 
 class Prof_Page extends StatefulWidget{
-  const Prof_Page({Key? key}) : super (key: key);
+  const Prof_Page({super.key, required this.currentUser});
+  final CurrentUser currentUser;
 
   @override
   _Prof_PageScreenState createState() => _Prof_PageScreenState();
@@ -46,7 +47,7 @@ class _Prof_PageScreenState extends State<Prof_Page>{
     screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           children: [
             GestureDetector(
@@ -54,12 +55,12 @@ class _Prof_PageScreenState extends State<Prof_Page>{
                 pickLoadImage();
               },
               child: Container(
-                margin: EdgeInsets.only(top: 80),
+                margin: const EdgeInsets.only(top: 80),
                 width: 120,
                 height: 120,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                  borderRadius: const BorderRadius.all(Radius.circular(20.0)),
                   color: primary
                 ),
               child: Center(
@@ -70,15 +71,65 @@ class _Prof_PageScreenState extends State<Prof_Page>{
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top:24),
+              margin: const EdgeInsets.only(top:24),
               alignment: Alignment.center,
               child: Text(
-                  widget.currentUser.firstName + ' ' + widget.currentUser.lastName, //
-                  style: TextStyle(
+                  '${widget.currentUser.firstName} ${widget.currentUser.lastName}', //
+                  style: const TextStyle(
                          fontSize: 35,
                          fontWeight: FontWeight.bold,
-                         color: Colors.white,
+                         color: Colors.green,
                        ),
+              ),
+            ),
+            Container(
+              child: Column(
+                children: <Widget>[
+                  ListTile(
+                    title: Text(
+                      'Email',
+                      style: TextStyle(
+                        color: Colors.green[400],
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Text(
+                      widget.currentUser.email,
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ),
+                  Divider(),
+                  ListTile(
+                    title: Text(
+                      'temp1',
+                      style: TextStyle(
+                        color: Colors.green[400],
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Text(
+                      '...',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ),
+                  Divider(),
+                  ListTile(
+                    title: Text(
+                      'temp2',
+                      style: TextStyle(
+                        color: Colors.green[400],
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Text(
+                      '...',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ),
+                ],
               ),
             )
 
