@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/colorSchemes.dart';
 import 'package:lsat_prep_app_2/signIn.dart';
 import 'package:firebase_core/firebase_core.dart';
-
 import 'homePage.dart';
 
 // The main function calls for the app to run
@@ -21,7 +20,6 @@ class MyApp extends StatelessWidget {
 
   // This sets up the app's title when you first open it
   static const String _title = 'LSAT Prep App';
-
   // The BuildContext builds what the main page will look like
   @override
 
