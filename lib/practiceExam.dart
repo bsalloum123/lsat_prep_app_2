@@ -162,7 +162,7 @@ class _pTestState extends State<pTestDesign> {
         // selectedItemColor: Colors.blue,
       ),
       appBar: AppBar(
-        title: const Text('Category Recognition'),
+        title: const Text('Practice Exam'),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.help_outline),

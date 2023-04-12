@@ -1,8 +1,9 @@
 //import 'package:getwidget/getwidget.dart';
 import 'package:flutter/material.dart';
+import 'package:lsat_prep_app_2/FlashCard.dart';
 import 'package:lsat_prep_app_2/colorSchemes.dart';
 import 'package:lsat_prep_app_2/CategoryRecognition.dart';
-import 'package:lsat_prep_app_2/flashCards.dart';
+import 'package:lsat_prep_app_2/FlashCard.dart';
 import 'package:lsat_prep_app_2/practiceExam.dart';
 
 // class homePage extends StatelessWidget {
@@ -68,7 +69,7 @@ class homeBody extends StatelessWidget {
                     elevation: 30),
                 onPressed: (){
                   Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
-                    return const flashCardDesign();}),);
+                    return const FlashCard();}),);
                 }, child: const Text('Flash Cards'),
               ),
             ),
