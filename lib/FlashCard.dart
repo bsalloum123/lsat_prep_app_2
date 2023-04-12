@@ -39,7 +39,7 @@ class _FlashCState extends State <FlashCard>{
     FlashQuiz(question: "Spell monday", answer: "monday"),
   ];
 
-  final int _currentIndex = 0;
+  int _currentIndex = 0;
 
   @override
   Widget build (BuildContext context){
@@ -95,7 +95,10 @@ class _FlashCState extends State <FlashCard>{
   }
   void showNextCard() {
     setState(() {
-      (_currentIndex  + 1 < _FlashQuizes.length )? _currentIndex + 1:0;
+      //(_currentIndex  + 1 < _FlashQuizes.length )? _currentIndex + 1:0;
+      if (_currentIndex + 1 < _FlashQuizes.length){
+        _currentIndex += 1;
+      }
 
     });
 
@@ -103,7 +106,10 @@ class _FlashCState extends State <FlashCard>{
 
   void showPreviousCard() {
     setState(() {
-      (_currentIndex  + 1 < _FlashQuizes.length )? _currentIndex + 1:0;
+      //(_currentIndex  - 1 > 0 )? _currentIndex - 1:0;
+      if (_currentIndex - 1 > -1){
+        _currentIndex -= 1;
+      }
 
     });
   }
