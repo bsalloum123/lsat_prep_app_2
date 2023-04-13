@@ -7,12 +7,19 @@ import 'package:lsat_prep_app_2/colorSchemes.dart';
 import 'package:lsat_prep_app_2/signIn.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'homePage.dart';
+import 'package:lsat_prep_app_2/CatRec/catList.dart';
+List<List>? catRecList = [];
 
 // The main function calls for the app to run
-void main() async{
+Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const MyApp());}
+  catRecList = await makeList();
+  // print("MAIN RUNNING");
+  // print(catRecList);
+  runApp(const MyApp());
+}
+
 
 // The MyApp class sets up what the app looks like
 class MyApp extends StatelessWidget {

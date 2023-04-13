@@ -1,39 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
-//import 'CatRec/answer.dart';
-//import 'CatRec/question.dart';
+import 'package:lsat_prep_app_2/main.dart';
 import 'CatRec/quiz.dart';
 import 'CatRec/result.dart';
-makeList() {
-  FirebaseFirestore db = FirebaseFirestore.instance;
-  var newList = [];
-  newList.length = 0;
-  db.collection('catRegLR').orderBy("id_string").limit(3).get().then(
-        (querySnapshot) {
-      print("Successfully completed");
-      for (var docSnapshot in querySnapshot.docs) {
-        newList.add({
-          "contextText": docSnapshot.data()["context"],
-          "question": docSnapshot.data()["question"],
-          "answers": [
-            {'text': 'Identify a Flaw', 'score': -1},
-            {'text': 'Strengthen', 'score': -1},
-            {'text': 'Implication', 'score': 1},
-            {'text': 'Sufficient Assumptions', 'score': -1},
-          ]
-        });
-      }
-      return newList;
-    },
-    onError: (e) => print("Error completing: $e"),
-  );
-}
-final temp = makeList();
 
 class cateRecogDesign extends StatefulWidget {
   const cateRecogDesign({Key? key}) : super(key: key);
-
 
   @override
   State<StatefulWidget> createState() {
@@ -41,30 +13,8 @@ class cateRecogDesign extends StatefulWidget {
   }
 }
 
-// class makeListClass {
-//
-//
-//   // get newList => makeList();
-// }
 
 class _cateRecogState extends State<cateRecogDesign> {
-  // FirebaseFirestore db = FirebaseFirestore.instance;
-  // final temp = makeList();
-
-  // get userExist => db.collection('users');
-  //
-  // void questionMap(db){
-  //   db.collection('catRegLR').orderBy("id_string").limit(3).get().then(
-  //     (querySnapshot) {
-  //       print("Successfully completed");
-  //       for (var docSnapshot in querySnapshot.docs) {
-  //         print(docSnapshot.data()["category"]);
-  //       }
-  //     },
-  //     onError: (e) => print("Error completing: $e"),
-  //   );
-  // }
-  // // get _questions => questionMap(db);
 
   final _questions = const [
     {
@@ -129,7 +79,7 @@ class _cateRecogState extends State<cateRecogDesign> {
 
   var _questionIndex = 0;
   var _totalScore = 0;
-
+  var _length= 3;
   // The _onItemTapped method controls which page on the app is shown
   void _onItemTapped(int index) {
     setState(() {
@@ -139,20 +89,11 @@ class _cateRecogState extends State<cateRecogDesign> {
           _questionIndex = _questionIndex - 1;
         } else if (index == 1) {
           print('Submit button');
+          print("Printing in widgets: ");
+          for (var i=0; i<_length; i++){
+            print(catRecList);
+          }
 
-          print(temp);
-          print("check");
-          // print(userExist());
-
-          // db.collection('users').orderBy("first name").limit(6).get().then(
-          //   (querySnapshot) {
-          //     print("Successfully completed");
-          //     for (var docSnapshot in querySnapshot.docs) {
-          //       print('${docSnapshot.id} => ${docSnapshot.data()["first name"]}');
-          //     }
-          //   },
-          //   onError: (e) => print("Error completing: $e"),
-          // );
           _questionIndex = _questions.length;
         } else {
           print('Going forwards!');
