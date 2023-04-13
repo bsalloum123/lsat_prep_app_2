@@ -53,26 +53,24 @@ class _cateRecogState extends State<cateRecogDesign> {
     },
     {
       'contextText':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
-      'questionText': 'Q4. Who created Dart programing language?',
+          'The average length of stay for patients at Edgewater Hospital is four days, compared to six days at University Hospital. Since studies show that recovery rates at the two hospitals are similar for patients with similar illnesses, University Hospital could decrease its average length of stay without affecting quality of care.',
+      'questionText': '4. The reasoning in the argument is most vulnerable to criticism on the grounds that the argument',
       'answers': [
-        {'text': 'Lars Bak and Kasper Lund', 'score': 10},
-        {'text': 'Brendan Eich', 'score': -2},
-        {'text': 'Bjarne Stroustrup', 'score': -2},
-        {'text': 'Jeremy Ashkenas', 'score': -2},
+        {'text': 'Identify a Flaw', 'score': 10},
+        {'text': 'Necessary Assumptions', 'score': -2},
+        {'text': 'Most Strongly Supported', 'score': -2},
+        {'text': 'Explain or Resolve', 'score': -2},
       ],
     },
     {
       'contextText':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam ex, pharetra ac scelerisque vel, suscipit et sapien. Mauris eu enim eget nibh convallis aliquam non eu orci. In metus augue, vestibulum ut quam in, ultricies eleifend nulla. Vestibulum sit.',
-      'questionText':
-          'Q5. Is Flutter for Web and Desktop available in stable version?',
+          'Everyone should have access to more than one newspaper, for there are at least two sides to every story. Since all sides of an important story should be covered, and no newspaper adequately covers all sides of every one of its stories, some important stories would not be adequately covered if there were only one newspaper.',
+      'questionText': '5. Which one of the following most accurately describes a flaw in the reasoning of the argument?',
       'answers': [
-        {
-          'text': 'Yes',
-          'score': -2,
-        },
-        {'text': 'No', 'score': 10},
+        {'text': 'Explain or Resolve', 'score': -2},
+        {'text': 'Sufficient Assumptions', 'score': -2},
+        {'text': 'Identify a Flaw', 'score': 10},
+        {'text': 'Weaken', 'score': -2},
       ],
     },
   ];

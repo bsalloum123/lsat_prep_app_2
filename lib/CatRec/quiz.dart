@@ -17,33 +17,36 @@ class Quiz extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.all(0),
-      elevation: 4.0,
-      color: Colors.green[200],
-      child: SizedBox(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height - 190,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
-          child: Column(
-            children: [
-              Context(
-                questions[questionIndex]['contextText'].toString(),
+    return SafeArea(
+      child: Card(
+        margin: const EdgeInsets.all(0),
+        elevation: 4.0,
+        color: Colors.green[200],
+        child: SizedBox(
+            //width: MediaQuery.of(context).size.width,
+            //height: MediaQuery.of(context).size.height - 190,
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
+              child: Column(
+                children: [
+                  Context(
+                    questions[questionIndex]['contextText'].toString(),
+                  ),
+                  Question(
+                    questions[questionIndex]['questionText'].toString(),
+                  ),
+                  ...(questions[questionIndex]['answers']
+                          as List<Map<String, Object>>)
+                      .map((answer) {
+                    return Answer(() => answerQuestion(answer['score']),
+                        answer['text'].toString());
+                    // const Text('data');
+                  }).toList()
+                ],
               ),
-              Question(
-                questions[questionIndex]['questionText'].toString(),
-              ),
-              ...(questions[questionIndex]['answers']
-                      as List<Map<String, Object>>)
-                  .map((answer) {
-                return Answer(() => answerQuestion(answer['score']),
-                    answer['text'].toString());
-                // const Text('data');
-              }).toList()
-            ],
-          ),
-        )),
+            )),
+      ),
     );
   }
 }

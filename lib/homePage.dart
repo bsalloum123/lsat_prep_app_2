@@ -1,8 +1,9 @@
 //import 'package:getwidget/getwidget.dart';
 import 'package:flutter/material.dart';
+import 'package:lsat_prep_app_2/FlashCard.dart';
 import 'package:lsat_prep_app_2/colorSchemes.dart';
 import 'package:lsat_prep_app_2/CategoryRecognition.dart';
-import 'package:lsat_prep_app_2/flashCards.dart';
+import 'package:lsat_prep_app_2/FlashCard.dart';
 import 'package:lsat_prep_app_2/practiceExam.dart';
 
 // class homePage extends StatelessWidget {
@@ -30,7 +31,8 @@ class _homeState extends State<homePage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: homeBody()
+      resizeToAvoidBottomInset: true,
+      body: homeBody(),
     );
   }
 }
@@ -40,18 +42,16 @@ class homeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context){
-    return Center(
-        child:
-        Column(
+    return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.all(50.0),
+              padding: const EdgeInsets.all(44.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green[200],
                     textStyle: lsatTextStyle,
-                    minimumSize: const Size(300, 75),
+                    minimumSize: const Size(320, 70),
                     elevation: 30), // adding margin
                 onPressed: (){
                   Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
@@ -60,26 +60,26 @@ class homeBody extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(50.0),
+              padding: const EdgeInsets.all(44.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue[200],
                     textStyle: lsatTextStyle,
-                    minimumSize: const Size(300, 75),
+                    minimumSize: const Size(320, 70),
                     elevation: 30),
                 onPressed: (){
                   Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
-                    return const flashCardDesign();}),);
+                    return const FlashCard();}),);
                 }, child: const Text('Flash Cards'),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(50.0),
+              padding: const EdgeInsets.all(44.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red[200],
                     textStyle: lsatTextStyle,
-                    minimumSize: const Size(300, 75),
+                    minimumSize: const Size(320, 70),
                     elevation: 30), // adding margin
                 onPressed: (){
                   Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
@@ -88,7 +88,6 @@ class homeBody extends StatelessWidget {
               ),
             )
           ],
-        ),
-    );
+        );
   }
 }

@@ -13,7 +13,7 @@ class Context extends StatelessWidget {
       margin: const EdgeInsets.fromLTRB(10, 10, 10, 25),
       child: Text(
         contextText,
-        style: const TextStyle(fontSize: 24),
+        style: const TextStyle(fontSize: 21),
         textAlign: TextAlign.left,
       ), //Text
     ); //Container
