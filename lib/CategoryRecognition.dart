@@ -1,6 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-//import 'CatRec/answer.dart';
-//import 'CatRec/question.dart';
+import 'package:lsat_prep_app_2/main.dart';
 import 'CatRec/quiz.dart';
 import 'CatRec/result.dart';
 
@@ -13,14 +13,9 @@ class cateRecogDesign extends StatefulWidget {
   }
 }
 
-/*class cateRecogPage extends StatefulWidget {
-  const cateRecogPage({Key? key}) : super(key: key);
-
-  @override
-  State<cateRecogPage> createState() => _cateRecogState();
-}*/
 
 class _cateRecogState extends State<cateRecogDesign> {
+
   final _questions = const [
     {
       'contextText':
@@ -82,7 +77,7 @@ class _cateRecogState extends State<cateRecogDesign> {
 
   var _questionIndex = 0;
   var _totalScore = 0;
-
+  var _length= 3;
   // The _onItemTapped method controls which page on the app is shown
   void _onItemTapped(int index) {
     setState(() {
@@ -92,6 +87,11 @@ class _cateRecogState extends State<cateRecogDesign> {
           _questionIndex = _questionIndex - 1;
         } else if (index == 1) {
           print('Submit button');
+          print("Printing in widgets: ");
+          for (var i=0; i<_length; i++){
+            print(catRecList[i][2]);
+          }
+
           _questionIndex = _questions.length;
         } else {
           print('Going forwards!');
@@ -108,27 +108,14 @@ class _cateRecogState extends State<cateRecogDesign> {
       _questionIndex = 0;
       _totalScore = 0;
     });
-    // Future.delayed(const Duration(seconds: 2), () async {
-    //   setState(() {
-    //     _questionIndex = 0;
-    //     _totalScore = 0;
-    //   });
-    // });
   }
 
   void _answerQuestion(int score) {
     // + 1 no matter right or wrong for right now
     _totalScore += 1;
-
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
-    // Future.delayed(const Duration(seconds: 2), () async {
-    //   setState(() {
-    //     _questionIndex = _questionIndex + 1;
-    //   });
-    // });
-
     // ignore: avoid_print
     print(_questionIndex);
     if (_questionIndex < _questions.length) {
@@ -207,36 +194,3 @@ class _cateRecogState extends State<cateRecogDesign> {
     );
   }
 }
-
-/*class cateRecogBody extends StatelessWidget {
-  const cateRecogBody({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        margin: const EdgeInsets.all(15.0), // adding margin
-        child:
-        Column(
-            children: [
-              Expanded(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child:
-                  Padding(
-                    padding: const EdgeInsets.all(30.0),
-                    child: _questionIndex < _questions.length ? Quiz(
-                      answerQuestion: _answerQuestion,
-                      questionIndex: _questionIndex,
-                      questions: _questions,
-                    ) //Quiz
-                        : Result(_totalScore, _resetQuiz),
-                  ),
-                ),
-              ),
-            ]
-        ),
-      ),
-    );
-  }
-}*/
