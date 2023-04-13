@@ -6,14 +6,20 @@ import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/colorSchemes.dart';
 import 'package:lsat_prep_app_2/signIn.dart';
 import 'package:firebase_core/firebase_core.dart';
-
 import 'homePage.dart';
+import 'package:lsat_prep_app_2/CatRec/catList.dart';
+List<List>? catRecList = [];
 
 // The main function calls for the app to run
-void main() async{
+Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const MyApp());}
+  catRecList = await makeList();
+  // print("MAIN RUNNING");
+  // print(catRecList);
+  runApp(const MyApp());
+}
+
 
 // The MyApp class sets up what the app looks like
 class MyApp extends StatelessWidget {
@@ -21,7 +27,6 @@ class MyApp extends StatelessWidget {
 
   // This sets up the app's title when you first open it
   static const String _title = 'LSAT Prep App';
-
   // The BuildContext builds what the main page will look like
   @override
 
