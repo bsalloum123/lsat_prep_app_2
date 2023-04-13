@@ -89,7 +89,7 @@ class _cateRecogState extends State<cateRecogDesign> {
           print('Submit button');
           print("Printing in widgets: ");
           for (var i=0; i<_length; i++){
-            print(catRecList);
+            print(catRecList[i][2]);
           }
 
           _questionIndex = _questions.length;

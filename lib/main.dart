@@ -8,7 +8,7 @@ import 'package:lsat_prep_app_2/signIn.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'homePage.dart';
 import 'package:lsat_prep_app_2/CatRec/catList.dart';
-List<List>? catRecList = [];
+List<List> catRecList = [];
 
 // The main function calls for the app to run
 Future main() async{
