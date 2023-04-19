@@ -13,10 +13,10 @@ Future makeList() async {
     catList.add(contextList);
     catList.add(correctAnswerList);
 
-    // catList.length = 3;
+    catList.length = 3;
     print(catList);
 
-    return await db.collection('catRegLR').orderBy("id_string").limit(10).get().then(
+    return await db.collection('catRegLR').orderBy("id_string").limit(3).get().then(
           (querySnapshot) {
         print("Successfully connected");
         for (var docSnapshot in querySnapshot.docs) {
