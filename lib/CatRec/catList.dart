@@ -4,6 +4,7 @@ Future makeList() async {
   // <List<List<String>>>
   try{
     FirebaseFirestore db = FirebaseFirestore.instance;
+    List<String> categories = ["Conclusion/Main Point", "Dispute", "Evaluation", "Explain or Resolve", "Identify a Flaw", "Implication", "Match Flaws", "Match Structures", "Most Strongly Supported", "Necessary Assumptions", "Others", "Principle", "Role", "Strengthen", "Sufficient Assumptions", "Technique", "Weaken"];
     List<String> questionList = [];
     List<String> contextList = [];
     List<String> correctAnswerList = [];
