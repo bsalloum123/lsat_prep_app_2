@@ -11,7 +11,10 @@ class CurrentUser{
   final String lastName;
   final String email;
   final String id;
+  late final String profilePhoto;
   late final String bio;
+
+
 
   // current user constructor
   CurrentUser({
@@ -21,6 +24,7 @@ class CurrentUser{
     required this.lastName,
     required this.email,
     required this.id,
+    required this.profilePhoto,
     required this.bio,
   });
 
@@ -34,6 +38,7 @@ class CurrentUser{
       lastName: doc['last name'],
       bio: doc['bio'],
       username: doc['username'],
+      profilePhoto: doc['profilePhoto'],
     );
   }
 }

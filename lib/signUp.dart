@@ -46,6 +46,7 @@ class _signUpState extends State<signUp> {
       'email': emailController.text,
       'id': user?.uid,
       'bio': "",
+      'profilePhoto': "",
     });
   }
 
