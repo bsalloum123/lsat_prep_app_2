@@ -4,7 +4,6 @@ Future makeList() async {
   // <List<List<String>>>
   try{
     FirebaseFirestore db = FirebaseFirestore.instance;
-    List<String> categories = ["Conclusion/Main Point", "Dispute", "Evaluation", "Explain or Resolve", "Identify a Flaw", "Implication", "Match Flaws", "Match Structures", "Most Strongly Supported", "Necessary Assumptions", "Others", "Principle", "Role", "Strengthen", "Sufficient Assumptions", "Technique", "Weaken"];
     List<String> questionList = [];
     List<String> contextList = [];
     List<String> correctAnswerList = [];
@@ -14,10 +13,10 @@ Future makeList() async {
     catList.add(contextList);
     catList.add(correctAnswerList);
 
-    // catList.length = 3;
+    catList.length = 3;
     print(catList);
 
-    return await db.collection('catRegLR').orderBy("id_string").limit(10).get().then(
+    return await db.collection('catRegLR').orderBy("id_string").limit(3).get().then(
           (querySnapshot) {
         print("Successfully connected");
         for (var docSnapshot in querySnapshot.docs) {

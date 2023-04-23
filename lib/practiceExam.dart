@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 //import 'CatRec/answer.dart';
 //import 'CatRec/question.dart';
-import 'CatRec/quiz.dart';
-import 'CatRec/result.dart';
+import 'PracExam/quiz.dart';
+import 'PracExam/result.dart';
 
 class pTestDesign extends StatefulWidget {
   const pTestDesign({Key? key}) : super(key: key);

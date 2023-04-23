@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
@@ -29,7 +30,7 @@ class _Prof_PageScreenState extends State<Prof_Page>{
         imageQuality: 75,
 
     );
-    Reference ref = FirebaseStorage.instance.ref().child("profilephoto.jpg");
+    Reference ref = FirebaseStorage.instance.ref().child("ProfilePhotos/${widget.currentUser.id}");
     await ref.putFile(File(image!.path));
     ref.getDownloadURL().then((value){
       print (value);
@@ -38,13 +39,19 @@ class _Prof_PageScreenState extends State<Prof_Page>{
       });
     });
 
-    
+    //widget.currentUser.profilePhoto = imageUrl;
+    //update the user's profilephoto in the database to store the imageUrl
+    await FirebaseFirestore.instance.collection('users').doc(widget.currentUser.id).update({'profilePhoto': imageUrl});
+
+
   }
 
   @override
   Widget build(BuildContext context){
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
+
+    var imageFile;
     return Scaffold(
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
@@ -60,16 +67,22 @@ class _Prof_PageScreenState extends State<Prof_Page>{
                 height: 120,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.all(Radius.circular(20.0)),
-                  color: primary
+                    borderRadius: const BorderRadius.all(Radius.circular(20.0)),
+                    color: primary
                 ),
-              child: Center(
-                child: imageUrl == " "? const Icon(
-                  Icons.person,size: 80, color: Colors.white,
-                ) : Image.network(imageUrl),
-              ),
+                child: Center(
+                  child: ListTile(
+                subtitle: Image(
+                  image: NetworkImage(widget.currentUser.profilePhoto), // ----------- the line that should change
+                  width: 300,
+                  height: 300,
+
+                ),
+                  ),
+                ),
               ),
             ),
+
             Container(
               margin: const EdgeInsets.only(top:24),
               alignment: Alignment.center,
