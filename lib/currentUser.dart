@@ -11,10 +11,8 @@ class CurrentUser{
   final String lastName;
   final String email;
   final String id;
-  late final String profilePhoto;
   late final String bio;
-
-
+  final String profileImage;
 
   // current user constructor
   CurrentUser({
@@ -24,8 +22,8 @@ class CurrentUser{
     required this.lastName,
     required this.email,
     required this.id,
-    required this.profilePhoto,
     required this.bio,
+    required this.profileImage,
   });
 
   // this method returns the current user information
@@ -38,7 +36,20 @@ class CurrentUser{
       lastName: doc['last name'],
       bio: doc['bio'],
       username: doc['username'],
-      profilePhoto: doc['profilePhoto'],
+      profileImage: doc['profileImage'],
     );
   }
+  static CurrentUser fromMap(Map<String, dynamic> map) {
+    return CurrentUser(
+      id: map['id'],
+      email: map['email'],
+      password: map['password'],
+      firstName: map['first name'],
+      lastName: map['last name'],
+      bio: map['bio'],
+      username: map['username'],
+      profileImage: map['profileImage'],
+    );
+  }
+
 }

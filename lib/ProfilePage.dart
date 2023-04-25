@@ -28,7 +28,8 @@ class _ProfilePageState extends State<ProfilePage> {
 
   _getUserDetails() async {
     DataSnapshot snapshot = (await userRef!.once()) as DataSnapshot;
-    currentUser = CurrentUser.fromMap(Map<String, dynamic>.from(snapshot.value));
+    //DataSnapshot snapshot = await userRef!.once();
+    currentUser = CurrentUser.fromMap(Map<String, dynamic>.from(snapshot.value as Map<String, dynamic>));
 
 
     setState(() {});
@@ -100,7 +101,7 @@ class _ProfilePageState extends State<ProfilePage> {
     user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       userRef =
-          FirebaseDatabase.instance.reference().child('users').child(user!.uid);
+          FirebaseDatabase.instance.ref().child('users').child(user!.uid);
     }
 
     _getUserDetails();
