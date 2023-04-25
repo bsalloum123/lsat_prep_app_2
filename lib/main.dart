@@ -8,13 +8,16 @@ import 'package:lsat_prep_app_2/signIn.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'homePage.dart';
 import 'package:lsat_prep_app_2/CatRec/catList.dart';
+import 'package:lsat_prep_app_2/PracExam/examList.dart';
 List<List> catRecList = [];
+List<List> examList = [];
 
 // The main function calls for the app to run
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   catRecList = await makeList();
+  examList  = await makeExamList();
   // print("MAIN RUNNING");
   // print(catRecList);
   runApp(const MyApp());

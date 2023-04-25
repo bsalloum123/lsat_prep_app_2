@@ -4,6 +4,7 @@ import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/CardView.dart';
 import 'package:lsat_prep_app_2/FlashQuiz.dart';
+import 'package:lsat_prep_app_2/main.dart';
 
 class FlashCard extends StatefulWidget {
   const FlashCard({Key? key}) : super(key: key);
@@ -32,19 +33,26 @@ class FlashCard extends StatefulWidget {
 // }
 
 class _FlashCState extends State<FlashCard> {
+
   final List<FlashQuiz> _FlashQuizes = [
     FlashQuiz(
-        question:
-            "If the statements above are true, which one of the following must also be true on the basis of them?",
-        answer: "Implication"),
+        question: catRecList[1][0],
+        answer: catRecList[2][0]),
     FlashQuiz(
-        question:
-            "Which one of the following, if true, would most seriously undermine the scientist's hypothesis?",
-        answer: "Weaken"),
+        question: catRecList[1][1],
+        answer: catRecList[2][1]),
     FlashQuiz(
-        question:
-            "Which of the following, if true, would most strongly support the position above?",
-        answer: "Strengthen"),
+        question: catRecList[1][2],
+        answer: catRecList[2][2]),
+    FlashQuiz(
+        question: catRecList[1][3],
+        answer: catRecList[2][3]),
+    FlashQuiz(
+        question: catRecList[1][4],
+        answer: catRecList[2][4]),
+    FlashQuiz(
+        question: catRecList[1][5],
+        answer: catRecList[2][5]),
   ];
 
   int _currentIndex = 0;
@@ -84,6 +92,7 @@ class _FlashCState extends State<FlashCard> {
                   onPressed: showPreviousCard,
                   icon: const Icon(Icons.chevron_left_rounded),
                   label: const Text('Previous')),
+              Text(_currentIndex.toString() + "/" + (_FlashQuizes.length).toString()),
               OutlinedButton.icon(
                   onPressed: showNextCard,
                   icon: const Icon(Icons.chevron_right_rounded),
