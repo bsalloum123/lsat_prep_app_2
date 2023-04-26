@@ -22,7 +22,7 @@ class _cateRecogState extends State<cateRecogDesign> {
   // The _onItemTapped method controls which page on the app is shown
   void _onItemTapped(int index) {
     setState(() {
-      if (_questionIndex != 5) {
+      if (_questionIndex != catRecList[0].length) {
         if (index == 0 && _questionIndex > 0) {
           print('Going back!');
           _questionIndex = _questionIndex - 1;

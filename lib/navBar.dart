@@ -1,10 +1,9 @@
 // The BasicBottomNavBar class creates the variables for the navigation bar
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lsat_prep_app_2/Prof_Page.dart';
 import 'package:lsat_prep_app_2/homePage.dart';
-import 'package:lsat_prep_app_2/profile_page.dart';
 import 'package:lsat_prep_app_2/settings.dart';
+import 'Prof_Page.dart';
 import 'currentUser.dart';
 
 class BasicBottomNavBar extends StatefulWidget {
@@ -24,7 +23,7 @@ class _BasicBottomNavBarState extends State<BasicBottomNavBar> {
   // This list calls all the other pages
   late final List<Widget> _pages = <Widget>[
     homePage(),
-    Prof_Page(currentUser: user),
+    Prof_Page(currentUser: user,),
     //ProfilePage(currentUser: user),
     settings()
   ];

@@ -1,3 +1,4 @@
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
@@ -20,14 +21,14 @@ class _Prof_PageScreenState extends State<Prof_Page>{
   double screenHeight = 0;
   double screenWidth = 0;
   Color primary = const Color(0xFFF3E5F5);
-  String imageUrl = " ";
+  String imageUrl = "";
 
   void pickLoadImage() async {
     final image = await ImagePicker().pickImage(
-        source:ImageSource.gallery,
-        maxWidth: 500,
-        maxHeight: 500,
-        imageQuality: 75,
+      source:ImageSource.gallery,
+      maxWidth: 500,
+      maxHeight: 500,
+      imageQuality: 75,
 
     );
     Reference ref = FirebaseStorage.instance.ref().child("ProfilePhotos/${widget.currentUser.id}");
@@ -42,6 +43,7 @@ class _Prof_PageScreenState extends State<Prof_Page>{
     //widget.currentUser.profilePhoto = imageUrl;
     //update the user's profilephoto in the database to store the imageUrl
     await FirebaseFirestore.instance.collection('users').doc(widget.currentUser.id).update({'profilePhoto': imageUrl});
+    print("imageUrl: $imageUrl");
 
 
   }
@@ -50,6 +52,8 @@ class _Prof_PageScreenState extends State<Prof_Page>{
   Widget build(BuildContext context){
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
+    Reference ref = FirebaseStorage.instance.ref().child("ProfilePhotos/${widget.currentUser.id}");
+    print("${widget.currentUser.profilePhoto}");
 
     var imageFile;
     return Scaffold(
@@ -72,12 +76,27 @@ class _Prof_PageScreenState extends State<Prof_Page>{
                 ),
                 child: Center(
                   child: ListTile(
-                subtitle: Image(
-                  image: NetworkImage(widget.currentUser.profilePhoto), // ----------- the line that should change
-                  width: 300,
-                  height: 300,
+                    subtitle:
+                    FutureBuilder(
+                      future: ref.getDownloadURL(),
+                      builder: (BuildContext context, AsyncSnapshot<String> url){
+                        if(url.hasData){
+                          return Image.network(url.data!);
+                        }
+                        else{
+                          return const CircularProgressIndicator();
+                        }
+                      },
+                    ),
+                    /*Image(
+                      image: ImageProvider
+                        //Image.network(imageUrl == "" ? widget.currentUser.profilePhoto : imageUrl).image,
+                      //NetworkImage(widget.currentUser.profilePhoto), // ----------- the line that should change
+                      width: 300,
+                      height: 300,
 
-                ),
+                    ),
+                     */
                   ),
                 ),
               ),
@@ -87,12 +106,12 @@ class _Prof_PageScreenState extends State<Prof_Page>{
               margin: const EdgeInsets.only(top:24),
               alignment: Alignment.center,
               child: Text(
-                  '${widget.currentUser.firstName} ${widget.currentUser.lastName}', //
-                  style: const TextStyle(
-                         fontSize: 35,
-                         fontWeight: FontWeight.bold,
-                         color: Colors.green,
-                       ),
+                '${widget.currentUser.firstName} ${widget.currentUser.lastName}', //
+                style: const TextStyle(
+                  fontSize: 35,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green,
+                ),
               ),
             ),
             Container(
@@ -146,9 +165,9 @@ class _Prof_PageScreenState extends State<Prof_Page>{
               ),
             )
 
-    ],
-    ),
-    ),
+          ],
+        ),
+      ),
     );
 
   }
