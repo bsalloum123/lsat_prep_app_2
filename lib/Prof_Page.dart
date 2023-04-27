@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'currentUser.dart';
+import 'package:intl/intl.dart';
 
 
 
@@ -132,24 +133,42 @@ class _Prof_PageScreenState extends State<Prof_Page>{
                     ),
                   ),
                   Divider(),
-                  ListTile(
-                    title: Text(
-                      'temp1',
-                      style: TextStyle(
-                        color: Colors.green[400],
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    subtitle: Text(
-                      '...',
-                      style: TextStyle(fontSize: 18),
+                        ListTile(
+                          title: Text(
+                            "LSAT Date",
+                            style: TextStyle(
+                              color: Colors.green[400],
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: Text(
+                            widget.currentUser.testDate,
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ),
+                        ListTile(
+                          title: Text(
+                            "Countdown",
+                            style: TextStyle(
+                              color: Colors.green[400],
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: Text(
+                            DateTime.now().difference(widget.currentUser.testDate as DateTime).parse(String)+ "... days left",
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
+
                   Divider(),
                   ListTile(
                     title: Text(
-                      'temp2',
+                      'Hours Spent Studying',
                       style: TextStyle(
                         color: Colors.green[400],
                         fontSize: 20,
@@ -164,10 +183,6 @@ class _Prof_PageScreenState extends State<Prof_Page>{
                 ],
               ),
             )
-
-          ],
-        ),
-      ),
     );
 
   }
