@@ -1,6 +1,6 @@
-import 'dart:ffi';
+//import 'dart:ffi';
 import 'dart:math';
-import 'package:flutter/cupertino.dart';
+//import 'package:flutter/cupertino.dart';
 
 List<String> categories = ["Conclusion/Main Point", "Dispute", "Evaluation", "Explain or Resolve", "Identify a Flaw", "Implication", "Match Flaws", "Match Structures", "Most Strongly Supported", "Necessary Assumptions", "Others", "Principle", "Role", "Strengthen", "Sufficient Assumptions", "Technique", "Weaken"];
 
@@ -15,10 +15,16 @@ List<Map<String, Object>> randomNumber(correctAnswer){
       n.add(current);
     }
   }
-  var temp = Random().nextInt(4);
 
-  n[temp] = correctAnswer;
-  i[temp] = 1;
+  if (n.contains(correctAnswer)){
+    i[n.indexOf(correctAnswer)] = 1;
+  }
+  else{
+    var temp = Random().nextInt(4);
+    n[temp] = correctAnswer;
+    i[temp] = 1;
+  }
+
   var x = [
       {'text': n[0], 'score': i[0]},
       {'text': n[1], 'score': i[1]},
