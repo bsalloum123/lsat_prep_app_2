@@ -47,7 +47,9 @@ class _signUpState extends State<signUp> {
       'id': user?.uid,
       'bio': "",
       'profilePhoto': "",
-      'testDate': "2023-08-11 00:00:00.000"
+      'testDateYear': 2023,
+      'testDateMonth': 06,
+      'testDateDay': 15,
     });
   }
 

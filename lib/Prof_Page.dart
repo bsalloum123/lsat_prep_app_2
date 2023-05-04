@@ -1,5 +1,6 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:date_count_down/countdown.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
@@ -55,6 +56,8 @@ class _Prof_PageScreenState extends State<Prof_Page>{
     screenWidth = MediaQuery.of(context).size.width;
     Reference ref = FirebaseStorage.instance.ref().child("ProfilePhotos/${widget.currentUser.id}");
     print("${widget.currentUser.profilePhoto}");
+    String countTime;
+    
 
     var imageFile;
     return Scaffold(
@@ -143,7 +146,7 @@ class _Prof_PageScreenState extends State<Prof_Page>{
                             ),
                           ),
                           subtitle: Text(
-                            widget.currentUser.testDate,
+                            widget.currentUser.testDateYear.toString() + "-" + widget.currentUser.testDateMonth.toString() + "-" + widget.currentUser.testDateDay.toString(),
                             style: TextStyle(fontSize: 18),
                           ),
                         ),
@@ -157,7 +160,8 @@ class _Prof_PageScreenState extends State<Prof_Page>{
                             ),
                           ),
                           subtitle: Text(
-                            DateTime.now().difference(widget.currentUser.testDate as DateTime).parse(String)+ "... days left",
+                            //DateFormat('dd').format(DateTime.now().difference(widget.currentUser.testDate as DateTime).inDays as DateTime) +
+                            countTime = CountDown().timeLeft(DateTime(widget.currentUser.testDateYear, widget.currentUser.testDateMonth, widget.currentUser.testDateDay), "LSAT is here Good Luck!","0", "0", "0", "0", "0","0", "0", "0"),
                             style: TextStyle(fontSize: 18),
                           ),
                         ),

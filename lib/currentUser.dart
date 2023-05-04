@@ -13,7 +13,9 @@ class CurrentUser{
   final String id;
   late final String profilePhoto;
   late final String bio;
-  late final String testDate;
+  late final int testDateYear;
+  late final int testDateMonth;
+  late final int testDateDay;
 
 
 
@@ -27,7 +29,9 @@ class CurrentUser{
     required this.id,
     required this.profilePhoto,
     required this.bio,
-    required this.testDate,
+    required this.testDateYear,
+    required this.testDateMonth,
+    required this.testDateDay,
   });
 
   // this method returns the current user information
@@ -41,7 +45,9 @@ class CurrentUser{
       bio: doc['bio'],
       username: doc['username'],
       profilePhoto: doc['profilePhoto'],
-      testDate: doc['testDate'],
+      testDateYear: doc['testDateYear'],
+      testDateMonth: doc['testDateMonth'],
+      testDateDay: doc['testDateDay'],
     );
   }
 
