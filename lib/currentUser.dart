@@ -1,10 +1,12 @@
 //Names: Batool, Christian, Inaya, Kevine
 //Description: current user --> creates a current user object to track who is currently logged in
+// Class: CSI CUE 2023
 
 // Imports the necessary packages for the app to run
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class CurrentUser{
+  // Contains all fields present in Firestore database
   final String username;
   final String password;
   final String firstName;

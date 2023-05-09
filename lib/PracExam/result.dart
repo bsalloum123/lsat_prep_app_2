@@ -1,6 +1,13 @@
-// ignore_for_file: avoid_print
+//Names: Batool, Christian, Inaya, Kevine
+//Description: result --> This file displays the results of the category recognition
+//exam from their score. It displays the total number of questions answered, number
+//right and number wrong. The option to reset the exam is also present as a button.
+// Class: CSI CUE 2023
+
 import 'package:flutter/material.dart';
 
+// Gets score, total number of questions and how many were wrong. Reset handler
+// is used if the chooses to reset the exam.
 class Result extends StatelessWidget {
   final int resultScore;
   final VoidCallback resetHandler;
@@ -11,13 +18,7 @@ class Result extends StatelessWidget {
   const Result(this.resultScore, this.resetHandler, this.questionsLength,this.wrongAnswers, {Key? key})
       : super(key: key);
 
-// //Remark Logic
-//   String get resultPhrase {
-//     String resultText = "Total Questions Answered:";
-//     print("$resultScore / $questionsLength");
-//     return resultText;
-//   }
-
+  // Boxes text and styling
   @override
   Widget build(BuildContext context) {
     return Center(

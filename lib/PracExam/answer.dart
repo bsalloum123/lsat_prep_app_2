@@ -1,6 +1,11 @@
+//Names: Batool, Christian, Inaya, Kevine
+//Description: answer --> This file creates each answer box for practiceExam
+//Class: CSI CUE 2023
+
 import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/colorSchemes.dart';
 
+// String contains the text of the answer and the select handler for callback return
 class Answer extends StatelessWidget {
   final VoidCallback selectHandler;
   final String answerText;

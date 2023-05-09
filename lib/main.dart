@@ -1,12 +1,13 @@
 //Names: Batool, Christian, Inaya, Kevine
 //Description: Main --> constructs main structure of the app and then sign in page
+//Initializes lists for app feature use.
 
 // Imports the necessary packages for the app to run
 import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/colorSchemes.dart';
 import 'package:lsat_prep_app_2/signIn.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'homePage.dart';
+//import 'homePage.dart';
 import 'package:lsat_prep_app_2/CatRec/catList.dart';
 import 'package:lsat_prep_app_2/PracExam/examList.dart';
 List<List> catRecList = [];
@@ -16,6 +17,7 @@ List<List> examList = [];
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  // Calls list creation to present wait time errors inside features.
   catRecList = await makeList();
   examList  = await makeExamList();
   // print("MAIN RUNNING");

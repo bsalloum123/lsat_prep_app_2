@@ -1,3 +1,9 @@
+//Names: Batool, Christian, Inaya, Kevine
+//Description: homePage -> Creates the home page of the app accessed when
+//succussfully logged in to app. Contains navigation to both exams and flash card
+//as well as settings and profile.
+// Class: CSI CUE 2023
+
 //import 'package:getwidget/getwidget.dart';
 import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/FlashCard.dart';
@@ -5,19 +11,6 @@ import 'package:lsat_prep_app_2/colorSchemes.dart';
 import 'package:lsat_prep_app_2/CategoryRecognition.dart';
 import 'package:lsat_prep_app_2/FlashCard.dart';
 import 'package:lsat_prep_app_2/practiceExam.dart';
-
-// class homePage extends StatelessWidget {
-//   const homePage({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       theme: lsatTheme,
-//       home: const homePage(),
-//     );
-//   }
-// }
 
 class homePage extends StatefulWidget {
   const homePage({Key? key}) : super(key: key);
@@ -29,6 +22,7 @@ class homePage extends StatefulWidget {
 class _homeState extends State<homePage> {
   int currentPage = 0;
   @override
+  // Fixes inset of page
   Widget build(BuildContext context) {
     return const Scaffold(
       resizeToAvoidBottomInset: true,
@@ -37,6 +31,8 @@ class _homeState extends State<homePage> {
   }
 }
 
+// Makes three button boxes, one for each feature (Practice Exam, Flash Cards and
+// Category Recognition), navigates based on selection.
 class homeBody extends StatelessWidget {
   const homeBody({Key? key}) : super(key: key);
 

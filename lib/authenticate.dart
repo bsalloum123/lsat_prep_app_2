@@ -1,5 +1,6 @@
 //Names: Batool, Christian, Inaya, Kevine
-//Description: authenticate --> This file checks that the user has an account with our app using firbase authentication
+//Description: authenticate --> This file checks that the user has an account with our app using firebase authentication
+// Class: CSI CUE 2023
 
 
 // Imports the necessary packages for the app to run

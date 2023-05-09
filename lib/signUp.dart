@@ -1,6 +1,9 @@
 //Names: Batool, Christian, Inaya, Kevine
-//Description: sign up screen --> creates the sign up page widget: designs the sign up screen
-//             called in the sign in screen file
+//Description: signUp --> creates the sign up page when the user choose to create a
+//new account from the signIn page of the app. Here the user fills in fields
+//provided and an account is made, stored in Firebase and the user is sent back
+//to the sign in page
+//Class: CSI CUE 2023
 
 
 // Imports the necessary packages for the app to run
@@ -36,6 +39,7 @@ class _signUpState extends State<signUp> {
   // The BuildContext builds what the sign in page will look like
   @override
 
+  // Fields filled in creating a new user is Firebase, only first 5 are filled by user
   createUser()async {
     final User? user = FirebaseAuth.instance.currentUser;
     usersRef.doc(user?.uid).set({
@@ -53,6 +57,8 @@ class _signUpState extends State<signUp> {
     });
   }
 
+  // Make fill in areas for user to enter Username, password, first & lastname and email
+  // Submitting results in going back to signIn page of app
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(

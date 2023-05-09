@@ -1,6 +1,12 @@
-import 'dart:async';
+//Names: Batool, Christian, Inaya, Kevine
+//Description: practiceExam --> This file creates an exam where the users
+//knowledge of the logical reasoning section of the LSAT is
+//tested. Allows for question navigation, answer selection, score counting,
+//resetting exam and submitting exam.
+// Class: CSI CUE 2023
 
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:async';
+//import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/main.dart';
 import 'PracExam/quiz.dart';
@@ -18,30 +24,30 @@ class pTestDesign extends StatefulWidget {
 
 class _pTestState extends State<pTestDesign> {
 
-
+  // var for storing current question index and score
   var _questionIndex = 0;
   var _totalScore = 0;
-  // var _length= 3;
   // The _onItemTapped method controls which page on the app is shown
   void _onItemTapped(int index) {
     setState(() {
       if (_questionIndex != examList[0].length) {
         if (index == 0 && _questionIndex > 0) {
-          print('Going back!');
+          //print('Going back!');
           _questionIndex = _questionIndex - 1;
         } else if (index == 1) {
-          print('Submit button');
+          //print('Submit button');
           _questionIndex = examList[0].length;
         } else {
-          print('Going forwards!');
+          //print('Going forwards!');
           _questionIndex = _questionIndex + 1;
         }
       } else {
-        print("Already submitted");
+        //print("Already submitted");
       }
     });
   }
 
+  // Resets the quiz
   void _resetQuiz() {
     setState(() {
       _questionIndex = 0;
@@ -49,6 +55,7 @@ class _pTestState extends State<pTestDesign> {
     });
   }
 
+  // Answering question increments index and adds to score, stops at end
   void _answerQuestion(int score) {
     // + 1 no matter right or wrong for right now
     _totalScore += score;
@@ -83,6 +90,7 @@ class _pTestState extends State<pTestDesign> {
     duration = Duration(hours: hours, minutes: minutes, seconds: seconds);
     });
     return Scaffold(
+      // Arrows for navigation and middle button for submitting exam
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.transparent,
@@ -108,6 +116,7 @@ class _pTestState extends State<pTestDesign> {
         onTap: _onItemTapped,
         // selectedItemColor: Colors.blue,
       ),
+      // Title bar showing page title and help button
       appBar: AppBar(
         title: const Text('Practice Exam'),
         actions: <Widget>[
@@ -139,6 +148,8 @@ class _pTestState extends State<pTestDesign> {
                 scrollDirection: Axis.vertical,
                 child: Padding(
                   padding: const EdgeInsets.all(5.0),
+                  // As long as their are more questions, the context, question,
+                  // and answer boxes are created otherwise it goes to results page
                   child: _questionIndex < examList[0].length
                       ? Quiz(
                     answerQuestion: _answerQuestion, // Changes state

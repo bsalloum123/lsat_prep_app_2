@@ -1,5 +1,6 @@
 //Names: Batool, Christian, Inaya, Kevine
 //Description: sign in screen --> creates the sign in page widget: designs the sign in screen
+//Class: CSI CUE 2023
 
 // Imports the necessary packages for the app to run
 import 'package:firebase_auth/firebase_auth.dart';

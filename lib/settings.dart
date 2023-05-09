@@ -1,3 +1,9 @@
+//Names: Batool, Christian, Inaya, Kevine
+//Description: settings --> File creates the setting page, where the user can find
+//tabs for account details, accessibility options and logging out. Only logging
+// out has been implemented.
+// Class: CSI CUE 2023
+
 import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/colorSchemes.dart';
 import 'package:lsat_prep_app_2/signIn.dart';
@@ -55,6 +61,7 @@ class settings extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
+                  // Returns user to the signIn page of the app
                   MaterialPageRoute<Widget>(builder: (BuildContext context) {
                     return signIn();
                     //Scaffold(appBar: AppBar(title: const Text('Log Out')),

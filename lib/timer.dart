@@ -1,3 +1,7 @@
+//Names: Batool, Christian, Inaya, Kevine
+//Description: timer --> Creates a timer to be used by practice exam or profile
+//Class: CSI CUE 2023
+
 import 'dart:async';
 
 import'package:flutter/material.dart';

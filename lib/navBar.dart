@@ -1,3 +1,8 @@
+//Names: Batool, Christian, Inaya, Kevine
+//Description: navBar --> Creates navigation bar for home that links to home,
+//profile and settings. Changes title for aforementioned pages to display correct title.
+// Class: CSI CUE 2023
+
 // The BasicBottomNavBar class creates the variables for the navigation bar
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

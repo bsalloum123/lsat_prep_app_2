@@ -1,3 +1,7 @@
+//Names: Batool, Christian, Inaya, Kevine
+//Description: Prof_Page --> File creates the profile page of the user. User can
+// change their photo and see relevant information about their profile and exam.
+// Class: CSI CUE 2023
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:date_count_down/countdown.dart';
