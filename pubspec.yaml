@@ -44,10 +44,15 @@ dependencies:
   flip_card: ^0.7.0
   firebase_database: ^10.1.1
   path_provider: ^2.0.14
-  intl: ^0.17.0
+
   ndialog: ^4.3.0
   flutter_countdown_timer: ^4.1.0
   date_count_down: ^2.1.0
+  dcdg: 4.1.0
+  mermaid: ^0.9.3
+  custom_timer: ^0.2.3
+  timer_count_down: ^2.2.0
+
 
 
 

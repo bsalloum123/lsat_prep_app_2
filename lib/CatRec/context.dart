@@ -1,6 +1,6 @@
 //Names: Batool, Christian, Inaya, Kevine
-//Description: context --> This file is used by categoryRecognition to build the
-//space to be occupied by the context of the question.
+//Description: context --> This file is used by categoryRecognition and practice exam
+// to build the space to be occupied by the context of the question.
 //Class: CSI CUE 2023
 
 import 'package:flutter/material.dart';

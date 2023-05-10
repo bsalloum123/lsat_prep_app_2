@@ -12,7 +12,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'currentUser.dart';
 import 'package:intl/intl.dart';
 
-
+final stopwatch = Stopwatch()..start();
 
 class Prof_Page extends StatefulWidget{
   const Prof_Page({super.key, required this.currentUser});
@@ -61,9 +61,7 @@ class _Prof_PageScreenState extends State<Prof_Page>{
     Reference ref = FirebaseStorage.instance.ref().child("ProfilePhotos/${widget.currentUser.id}");
     print("${widget.currentUser.profilePhoto}");
     String countTime;
-    
 
-    var imageFile;
     return Scaffold(
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
@@ -74,38 +72,35 @@ class _Prof_PageScreenState extends State<Prof_Page>{
                 pickLoadImage();
               },
               child: Container(
-                margin: const EdgeInsets.only(top: 80),
-                width: 120,
-                height: 120,
-                alignment: Alignment.center,
+                margin: const EdgeInsets.only(top: 70),
+                width: 150,
+                height: 150,
+                clipBehavior: Clip.hardEdge,
+                alignment: Alignment.centerRight,
                 decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.all(Radius.circular(20.0)),
-                    color: primary
+                    shape: BoxShape.circle,
+
+                   // borderRadius: const BorderRadius.all(Radius.circular(20.0)),
+                    color: Colors.transparent,
                 ),
                 child: Center(
                   child: ListTile(
-                    subtitle:
-                    FutureBuilder(
-                      future: ref.getDownloadURL(),
-                      builder: (BuildContext context, AsyncSnapshot<String> url){
-                        if(url.hasData){
-                          return Image.network(url.data!);
-                        }
-                        else{
-                          return const CircularProgressIndicator();
-                        }
-                      },
-                    ),
-                    /*Image(
-                      image: ImageProvider
-                        //Image.network(imageUrl == "" ? widget.currentUser.profilePhoto : imageUrl).image,
-                      //NetworkImage(widget.currentUser.profilePhoto), // ----------- the line that should change
-                      width: 300,
-                      height: 300,
+                      subtitle:
 
+                      FutureBuilder(
+
+                        future: ref.getDownloadURL(),
+                        builder: (BuildContext context, AsyncSnapshot<String> url){
+                          if(url.hasData){
+                            return Image.network(url.data!);
+                          }
+                          else{
+                            return const Icon(Icons.account_circle, size: 130, color: Colors.grey,);
+                            //CircularProgressIndicator();
+                          }
+                        },
+                      ),
                     ),
-                     */
-                  ),
                 ),
               ),
             ),
@@ -154,7 +149,8 @@ class _Prof_PageScreenState extends State<Prof_Page>{
                             style: TextStyle(fontSize: 18),
                           ),
                         ),
-                        ListTile(
+                  Divider(),
+                  ListTile(
                           title: Text(
                             "Countdown",
                             style: TextStyle(
@@ -165,18 +161,14 @@ class _Prof_PageScreenState extends State<Prof_Page>{
                           ),
                           subtitle: Text(
                             //DateFormat('dd').format(DateTime.now().difference(widget.currentUser.testDate as DateTime).inDays as DateTime) +
-                            countTime = CountDown().timeLeft(DateTime(widget.currentUser.testDateYear, widget.currentUser.testDateMonth, widget.currentUser.testDateDay), "LSAT is here Good Luck!","0", "0", "0", "0", "0","0", "0", "0"),
+                            countTime = CountDown().timeLeft(DateTime(widget.currentUser.testDateYear, widget.currentUser.testDateMonth, widget.currentUser.testDateDay), "LSAT is here Good Luck!"," days , ", " hours , ", " minutes and ", " seconds until exam day!", " "," ", " ", " "),
                             style: TextStyle(fontSize: 18),
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-
                   Divider(),
                   ListTile(
                     title: Text(
-                      'Hours Spent Studying',
+                      "Time Spent Studying So Far",
                       style: TextStyle(
                         color: Colors.green[400],
                         fontSize: 20,
@@ -184,10 +176,16 @@ class _Prof_PageScreenState extends State<Prof_Page>{
                       ),
                     ),
                     subtitle: Text(
-                      '...',
+                        "${stopwatch.elapsed.inHours}hrs ${stopwatch.elapsed.inMinutes}m ${stopwatch.elapsed.inSeconds.remainder(60)}s",
                       style: TextStyle(fontSize: 18),
                     ),
                   ),
+                      ],
+                    ),
+                  ),
+
+                  Divider(),
+
                 ],
               ),
             )
