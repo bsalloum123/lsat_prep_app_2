@@ -9,7 +9,7 @@
 import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/main.dart';
 import 'CatRec/quiz.dart';
-import 'CatRec/result.dart';
+import 'result.dart';
 
 class cateRecogDesign extends StatefulWidget {
   const cateRecogDesign({Key? key}) : super(key: key);

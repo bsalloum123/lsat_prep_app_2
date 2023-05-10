@@ -5,9 +5,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/main.dart';
-import './answer.dart';
-import './context.dart';
-import './question.dart';
+import '../answer.dart';
+import '../context.dart';
+import '../question.dart';
 import './randomNumber.dart';
 
 // Takes list of questions and question index from CategoryRecognition

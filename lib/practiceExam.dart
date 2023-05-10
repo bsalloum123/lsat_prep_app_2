@@ -10,7 +10,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/main.dart';
 import 'PracExam/quiz.dart';
-import 'PracExam/result.dart';
+import 'result.dart';
 
 
 class pTestDesign extends StatefulWidget {

@@ -1,13 +1,11 @@
 //Names: Batool, Christian, Inaya, Kevine
-//Description: context --> This file is used by practiceExam to build the
-//space to be occupied by the context of the question.
+//Description: context --> This file is used by categoryRecognition and practice exam
+// to build the space to be occupied by the context of the question.
 //Class: CSI CUE 2023
 
 import 'package:flutter/material.dart';
-import './answer.dart';
-import './question.dart';
 
-// Question text provide by examList list
+// Question text provide by catList list
 class Context extends StatelessWidget {
   final String contextText;
   const Context(this.contextText, {Key? key}) : super(key: key);
