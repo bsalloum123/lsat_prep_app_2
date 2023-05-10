@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:lsat_prep_app_2/main.dart';
 import 'PracExam/quiz.dart';
 import 'PracExam/result.dart';
-import 'countdowntimer.dart';
+
 
 class pTestDesign extends StatefulWidget {
   const pTestDesign({Key? key}) : super(key: key);
@@ -56,7 +56,7 @@ class _pTestState extends State<pTestDesign> {
   }
 
   // Answering question increments index and adds to score, stops at end
-  void _answerQuestion(int score) {
+   void _answerQuestion(int score) {
     // + 1 no matter right or wrong for right now
     _totalScore += score;
     setState(() {
@@ -75,20 +75,7 @@ class _pTestState extends State<pTestDesign> {
 
   @override
   Widget build(BuildContext context) {
-    Duration duration = Duration();
-    Timer? timer;
-    final addseconds = 1;
-    String greeting = "${0 + addseconds}";
 
-    timer = Timer.periodic(Duration(minutes: 35, seconds: 0), (timer) {
-      setState(() {
-        greeting = "${DateTime.now().second}";
-      });
-      final seconds = duration.inSeconds + addseconds;
-      final hours = duration.inHours;
-      final minutes = duration.inMinutes;
-    duration = Duration(hours: hours, minutes: minutes, seconds: seconds);
-    });
     return Scaffold(
       // Arrows for navigation and middle button for submitting exam
       bottomNavigationBar: BottomNavigationBar(
@@ -120,14 +107,6 @@ class _pTestState extends State<pTestDesign> {
       appBar: AppBar(
         title: const Text('Practice Exam'),
         actions: <Widget>[
-
-          /*Text(
-           "hello",
-           // '${duration.inHours}'+ ':' +'${duration.inMinutes}'+ ':' +'${duration.inSeconds}',
-            style: const TextStyle(fontSize: 20),
-          ),
-
-           */
 
           IconButton(
             icon: const Icon(Icons.help_outline),
