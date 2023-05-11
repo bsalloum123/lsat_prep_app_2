@@ -29,3 +29,7 @@ samples, guidance on mobile development, and a full API reference.
 *Project runs on most Flutter SDK compatable IDEs. Firebase integration will cause errors unless replaced with compatable project with user data and dataset. Dataset obtainable from https://github.com/cjohansson93/CSI-CUE-LSAT-Prep-App *
 
 To get started after running project on device or emulator, register a new profile. Use login credentials to access home page. Home page gives access to three features, practice exams, flash card practice and category recognition testing. As well as utility pages profile and settings. All navigated pages can backtrack to home by the back arrow on top left. Logging out of the app is located in the setting of the app.
+
+### License
+
+GNU GPL v3
